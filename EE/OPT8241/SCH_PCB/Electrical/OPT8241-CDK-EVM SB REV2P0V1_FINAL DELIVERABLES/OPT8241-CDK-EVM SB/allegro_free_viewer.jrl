@@ -1,0 +1,71 @@
+\t (00:00:19) allegro_free_viewer 16.6 S002 (v16-6-0A) Windows 32
+\t (00:00:19)     Journal start - Wed Jun 22 14:50:46 2016
+\t (00:00:19)         Host=HYAN-E7440 User=hyan Pid=5900 CPUs=4
+\t (00:00:19) 
+\d (00:00:19) Database opened: E:/Self/OPT8241/OPT8241-CDK-EVM-HWDesignFiles/Electrical/OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES/OPT8241-CDK-EVM SB/OPT8241-CDK-EVM SB REV2P0V1.brd
+\i (00:00:21) show measure 
+\i (00:00:31) setwindow form.find
+\i (00:00:31) FORM find find_name u3 
+\i (00:00:31) setwindow pcb
+\i (00:00:31) trapsize 1452
+\i (00:00:41) trapsize 2167
+\i (00:00:42) trapsize 961
+\i (00:00:47) setwindow form.find
+\i (00:00:47) FORM find find_name u3 
+\i (00:00:47) setwindow pcb
+\i (00:00:47) trapsize 734
+\i (00:00:50) setwindow form.vf_vis
+\i (00:00:50) FORM vf_vis 1 all_colorvisible YES 
+\i (00:00:54) setwindow pcb
+\i (00:00:54) zoom out 1 
+\i (00:00:54) setwindow pcb
+\i (00:00:54) zoom out 75.61 -29.72
+\i (00:00:54) trapsize 1468
+\i (00:01:05) setwindow form.vf_vis
+\i (00:01:05) FORM vf_vis colorview_list Film: SILKTOPREF 
+\i (00:01:58) setwindow form.find
+\i (00:01:58) FORM find find_name u13 
+\i (00:01:58) setwindow pcb
+\i (00:01:58) trapsize 352
+\i (00:02:02) zoom out 1 
+\i (00:02:02) setwindow pcb
+\i (00:02:02) zoom out 464.09 -1519.34
+\i (00:02:02) trapsize 704
+\i (00:02:02) zoom out 1 
+\i (00:02:02) setwindow pcb
+\i (00:02:02) zoom out 464.08 -1519.33
+\i (00:02:02) trapsize 1408
+\i (00:02:02) zoom out 1 
+\i (00:02:02) setwindow pcb
+\i (00:02:02) zoom out 464.08 -1519.33
+\i (00:02:02) trapsize 2815
+\i (00:02:03) zoom in 1 
+\i (00:02:03) setwindow pcb
+\i (00:02:03) zoom in 655.51 -1457.40
+\i (00:02:03) trapsize 1408
+\i (00:03:20) zoom in 1 
+\i (00:03:20) setwindow pcb
+\i (00:03:20) zoom in 1494.39 -1465.84
+\i (00:03:20) trapsize 704
+\i (00:03:20) zoom in 1 
+\i (00:03:20) setwindow pcb
+\i (00:03:20) zoom in 1494.39 -1465.84
+\i (00:03:20) trapsize 352
+\i (00:03:21) zoom out 1 
+\i (00:03:21) setwindow pcb
+\i (00:03:21) zoom out 1494.40 -1465.84
+\i (00:03:21) trapsize 704
+\i (00:03:21) zoom out 1 
+\i (00:03:21) setwindow pcb
+\i (00:03:21) zoom out 1494.39 -1465.83
+\i (00:03:21) trapsize 1408
+\i (00:03:21) zoom out 1 
+\i (00:03:21) setwindow pcb
+\i (00:03:21) zoom out 1494.39 -1465.83
+\i (00:03:21) trapsize 2815
+\i (00:03:22) zoom in 1 
+\i (00:03:22) setwindow pcb
+\i (00:03:22) zoom in 300.81 -1679.78
+\i (00:03:22) trapsize 1408
+\i (01:24:37) exit 
+\t (01:24:37)     Journal end - Wed Jun 22 16:15:05 2016

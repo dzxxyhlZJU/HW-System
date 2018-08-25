@@ -1,0 +1,45 @@
+\t (00:00:00) allegro_free_viewer 16.6 S038 (v16-6-112CV) Windows 32
+\t (00:00:00)     Journal start - Fri May 06 10:02:36 2016
+\t (00:00:00)         Host=HYAN User=hyan Pid=4620 CPUs=4
+\t (00:00:00) CmdLine= C:\Program Files\Cadence Design Systems\Allegro Free Physical Viewers 16.6\tools\pcb\bin\allegro_free_viewer.exe
+\t (00:00:00) 
+\t (00:00:00) Starting new design...
+\i (00:00:00) trapsize 1273
+\i (00:00:00) trapsize 1228
+\i (00:00:01) trapsize 1273
+\i (00:00:01) trapsize 1451
+\i (00:00:03) open 
+\i (00:00:07) fillin "OPT8241-CDK-EVM IB 10-50_REV2P0V1.brd"
+\t (00:00:07) Opening existing design...
+\i (00:00:08) trapsize 15224
+\d (00:00:08) Design opened: E:/Self/OPT8241/Software/OPT8241-CDK-EVM-HWDesignFiles/Electrical/OPT8241-CDK-EVM IB 10-50_REV2P0V1_Final deliverables/OPT8241-CDK-EVM IB 10-50/OPT8241-CDK-EVM IB 10-50_REV2P0V1.brd
+\i (00:00:10) zoom fit 
+\i (00:00:10) trapsize 1651
+\i (00:00:17) setwindow form.mini
+\i (00:00:17) FORM mini subcolor 1 
+\i (00:00:27) setwindow form.vf_vis
+\i (00:00:27) FORM vf_vis colorview_list Film: SilkscreenTop 
+\i (00:00:34) FORM vf_vis 1 all_colorvisible YES 
+\i (00:00:45) setwindow pcb
+\i (00:00:45) show measure 
+\i (00:00:53) setwindow form.find
+\i (00:00:53) FORM find find_name D1 
+\i (00:00:53) setwindow pcb
+\i (00:00:53) trapsize 445
+\i (00:00:55) setwindow text
+\i (00:00:55) close 
+\i (00:00:58) setwindow pcb
+\i (00:00:58) zoom out 1 
+\i (00:00:58) setwindow pcb
+\i (00:00:58) zoom out 256.29 -697.38
+\i (00:00:58) trapsize 890
+\i (00:01:02) zoom in 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom in 256.29 -697.37
+\i (00:01:02) trapsize 445
+\i (00:01:02) zoom out 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom out 256.29 -697.37
+\i (00:01:02) trapsize 890
+\i (07:46:11) exit 
+\t (07:46:11)     Journal end - Fri May 06 17:48:48 2016

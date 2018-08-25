@@ -1,0 +1,139 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\opt8241-cdk-evm sb rev2p0v1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify)
+    (Netlist_TAB "0"))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "Main")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "Connectors")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "DDR2")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "FX2")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "Illum_Conn")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "OPT8241")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "Power")
+      (Path "Design Resources"
+         "e:\self\opt8241\opt8241-cdk-evm-hwdesignfiles\electrical\opt8241-cdk-evm sb rev2p0v1_final deliverables\opt8241-cdk-evm sb\opt8241-cdk-evm sb rev2p0v1.dsn"
+         "TFC"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 551"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 50 1186 50 388")
+        (Scroll "0 250")
+        (Zoom "100")
+        (Occurrence "/USB"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "FX2")
+      (Page "Data/Control"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 75 1215 75 417")
+        (Scroll "-61 0")
+        (Zoom "100")
+        (Occurrence "/USB"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "FX2")
+      (Page "Power"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 100 1240 100 442")
+        (Scroll "-61 0")
+        (Zoom "100")
+        (Occurrence "/USB"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "FX2")
+      (Page "USBBus"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 125 1265 125 467")
+        (Scroll "0 230")
+        (Zoom "100")
+        (Occurrence "/OPT9221"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "TFC")
+      (Page "RAM"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 150 1290 150 492")
+        (Scroll "1515 1008")
+        (Zoom "200")
+        (Occurrence "/OPT9221"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "TFC")
+      (Page "Config"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 1140 0 342")
+        (Scroll "252 170")
+        (Zoom "100")
+        (Occurrence "/OPT9221"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "TFC")
+      (Page "USB"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 50 1190 50 392")
+        (Scroll "0 587")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "Main")
+      (Page "Top"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 75 1215 75 417")
+        (Scroll "0 90")
+        (Zoom "100")
+        (Occurrence "/RAM"))
+      (Path
+         "E:\SELF\OPT8241\OPT8241-CDK-EVM-HWDESIGNFILES\ELECTRICAL\OPT8241-CDK-EVM SB REV2P0V1_FINAL DELIVERABLES\OPT8241-CDK-EVM SB\OPT8241-CDK-EVM SB REV2P0V1.DSN")
+      (Schematic "DDR2")
+      (Page "DDR2")))
+  (MPSSessionName "hyan")
+  (ISPCBBASICLICENSE "false"))

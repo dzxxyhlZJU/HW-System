@@ -1,0 +1,235 @@
+{ Using PSTWRITER 16.6.0 d001May-16-2016 at 17:42:29 }
+
+#1 WARNING(ORCAP-36038): "No_connect" property on Pin "U14.2" ignored for U14: Power, PowerDistribution (9.80, 3.70). Connecting pin to net "N16935743".
+#2 WARNING(ORCAP-36038): "No_connect" property on Pin "U14.1" ignored for U14: Power, PowerDistribution (9.80, 3.70). Connecting pin to net "N16935741".
+#3 WARNING(ORCAP-36038): "No_connect" property on Pin "J1.23" ignored for J1: Illum_Conn, Illum_Conn (5.50, 3.60). Connecting pin to net "VCC_5V0_ILLUM".
+#4 WARNING(ORCAP-36038): "No_connect" property on Pin "U11.G6" ignored for U11: Power, TPS659122 (0.00, 0.00). Connecting pin to net "N1677684126".
+#5 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.7A" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "N17072226".
+#6 WARNING(ORCAP-36038): "No_connect" property on Pin "U11.G1" ignored for U11: Power, TPS659122 (8.80, 0.90). Connecting pin to net "VLDO4".
+#7 WARNING(ORCAP-36038): "No_connect" property on Pin "U11.G5" ignored for U11: Power, TPS659122 (0.00, 0.00). Connecting pin to net "INT_PMIC".
+#8 WARNING(ORCAP-36038): "No_connect" property on Pin "U11.J3" ignored for U11: Power, TPS659122 (8.80, 0.90). Connecting pin to net "VCC_ILLUM_VREF".
+#9 WARNING(ORCAP-36038): "No_connect" property on Pin "U21.7" ignored for U21: Power, NegativeSupply (1.50, 2.40). Connecting pin to net "GND_SIGNAL".
+#10 WARNING(ORCAP-36038): "No_connect" property on Pin "U21.13" ignored for U21: Power, NegativeSupply (1.50, 2.40). Connecting pin to net "GND_SIGNAL".
+#11 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.8A" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "N17072826".
+#12 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.3B" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "DC_JACK_UNPLUG".
+#13 WARNING(ORCAP-36038): "No_connect" property on Pin "U11.H1" ignored for U11: Power, TPS659122 (8.80, 0.90). Connecting pin to net "VCC_ILLUM_FB".
+#14 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.38" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_I2C_SLV_SCL_3V3".
+#15 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.1A" ignored for U13: FX2, Data/Control (6.20, 5.40). Connecting pin to net "N16901644".
+#16 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.39" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_I2C_SLV_SDA_3V3".
+#17 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.6B" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "TIC_MISO".
+#18 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.3A" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "INIT_DONE".
+#19 WARNING(ORCAP-36038): "No_connect" property on Pin "U8.A7" ignored for U8: TFC, ADC (3.80, 3.30). Connecting pin to net "N17053942".
+#20 WARNING(ORCAP-36038): "No_connect" property on Pin "U11.H9" ignored for U11: Power, TPS659122 (8.80, 0.90). Connecting pin to net "VCC_AVDD_OUT_3V3".
+#21 WARNING(ORCAP-36038): "No_connect" property on Pin "U21.12" ignored for U21: Power, NegativeSupply (1.50, 2.40). Connecting pin to net "VCC_I2C_3V3".
+#22 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.3C" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "PD6".
+#23 WARNING(ORCAP-36038): "No_connect" property on Pin "U8.K1" ignored for U8: TFC, USB (10.40, 2.20). Connecting pin to net "N17054019".
+#24 WARNING(ORCAP-36038): "No_connect" property on Pin "U8.C16" ignored for U8: TFC, Illumination (3.80, 3.60). Connecting pin to net "ILLUM_SW_1".
+#25 WARNING(ORCAP-36038): "No_connect" property on Pin "U8.B16" ignored for U8: TFC, Illumination (3.80, 3.60). Connecting pin to net "ILLUM_FB".
+#26 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.37" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "GND".
+#27 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.40" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "GND".
+#28 WARNING(ORCAP-36038): "No_connect" property on Pin "U8.D2" ignored for U8: TFC, Config (3.50, 1.80). Connecting pin to net "N17173348".
+#29 WARNING(ORCAP-36038): "No_connect" property on Pin "U13.6A" ignored for U13: FX2, Data/Control (5.90, 1.40). Connecting pin to net "N17066447".
+#30 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.35" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_TIC_CONFIGZ_IN".
+#31 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.29" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_TIC_DCLK_IN".
+#32 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.31" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_TIC_DATA_0_IN".
+#33 WARNING(ORCAP-36038): "No_connect" property on Pin "U21.1" ignored for U21: Power, NegativeSupply (1.50, 2.40). Connecting pin to net "HA".
+#34 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.32" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_TIC_CONF_DONE_OUT".
+#35 WARNING(ORCAP-36038): "No_connect" property on Pin "U17.1" ignored for U17: Power, PowerDistribution (9.80, 5.40). Connecting pin to net "N16935702".
+#36 WARNING(ORCAP-36038): "No_connect" property on Pin "U8.G16" ignored for U8: TFC, Config (3.50, 1.80). Connecting pin to net "EXT_TIC_INIT_DONE_OUT".
+#37 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.26" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_TIC_INIT_DONE_OUT".
+#38 WARNING(ORCAP-36038): "No_connect" property on Pin "U17.2" ignored for U17: Power, PowerDistribution (9.80, 5.40). Connecting pin to net "N16935705".
+#39 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.33" ignored for J2: Connectors, Expansion (4.40, 0.30). Connecting pin to net "EXT_TIC_STATUSZ_OUT".
+#40 WARNING(ORCAP-36006): Part Name "DIODE SCHOTTKY_1_DIO_SOD882_PMEG3005EL" is renamed to "DIODE SCHOTTKY_1_DIO_SOD882_PME".
+#41 WARNING(ORCAP-36006): Part Name "LN03202_6_LED_CLVBA-FKA-CAEDH8BBB7A363_CLVBA-FKA-CAEDH8BBB7A363" is renamed to "LN03202_6_LED_CLVBA-FKA-CAEDH8B".
+#42 WARNING(ORCAP-36006): Part Name "LN2162/SM_4_LED_APHBM2012QBDSURKC_APHBM2012QBDSURKC" is renamed to "LN2162/SM_4_LED_APHBM2012QBDSUR".
+#43 WARNING(ORCAP-36006): Part Name "DIODE SCHOTTKY_2_DIO_SOD128_PMEG3050EP,115" is renamed to "DIODE SCHOTTKY_2_DIO_SOD128_PME".
+#44 WARNING(ORCAP-36006): Part Name "CONN PLUG 12X2_1_SAMTEC_SHF-112-01-L-D-RA_SHF-112-01-L-D-RA" is renamed to "CONN PLUG 12X2_1_SAMTEC_SHF-112".
+#45 WARNING(ORCAP-36006): Part Name "CONN FLEX 40_0_ZF5S-40-01-T-WT_ZF5S-40-01-T-WT" is renamed to "CONN FLEX 40_0_ZF5S-40-01-T-WT_".
+#46 WARNING(ORCAP-36006): Part Name "CONN PWR 2-J_SAMTEC_TSM-102-01-T-SH_DNP" is renamed to "CONN PWR 2-J_SAMTEC_TSM-102-01-".
+#47 WARNING(ORCAP-36006): Part Name "CONN MOD 6-6_J_TAG-CONNECT_TC2030-IDC-NL_TC2030-IDC-NL" is renamed to "CONN MOD 6-6_J_TAG-CONNECT_TC20".
+#48 WARNING(ORCAP-36006): Part Name "SW PUSHBUTTON_0_TL1015_TL1015AF160QG" is renamed to "SW PUSHBUTTON_0_TL1015_TL1015AF".
+#49 WARNING(ORCAP-36006): Part Name "SW DPDT_0_T521001_500SDP1S1M2QEA" is renamed to "SW DPDT_0_T521001_500SDP1S1M2QE".
+#50 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_READY_IN" is renamed to "TEST POINT_TP_40MIL_TFC_READY_I".
+#51 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TIC_CONF_DONE" is renamed to "TEST POINT_TP_40MIL_TIC_CONF_DO".
+#52 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_OVERFLOW_IN" is renamed to "TEST POINT_TP_40MIL_TFC_OVERFLO".
+#53 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_DC_JACK_UNPLUG" is renamed to "TEST POINT_TP_40MIL_DC_JACK_UNP".
+#54 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_PHASE_AUX_OUT" is renamed to "TEST POINT_TP_40MIL_TFC_PHASE_A".
+#55 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_OP_CS_OUT" is renamed to "TEST POINT_TP_40MIL_TFC_OP_CS_O".
+#56 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TIC_INIT_DONE" is renamed to "TEST POINT_TP_40MIL_TIC_INIT_DO".
+#57 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_RESETZ_IN" is renamed to "TEST POINT_TP_40MIL_TFC_RESETZ_".
+#58 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_HD_BD_OUT" is renamed to "TEST POINT_TP_40MIL_TFC_HD_BD_O".
+#59 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_SYSCLK_IN" is renamed to "TEST POINT_TP_40MIL_TFC_SYSCLK_".
+#60 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_OP_DCLK_OUT" is renamed to "TEST POINT_TP_40MIL_TFC_OP_DCLK".
+#61 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_I2C_SLV_SCL_3V3" is renamed to "TEST POINT_TP_40MIL_I2C_SLV_SCL".
+#62 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_I2C_SLV_SDA_3V3" is renamed to "TEST POINT_TP_40MIL_I2C_SLV_SDA".
+#63 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_I2C_SLV_SCL" is renamed to "TEST POINT_TP_40MIL_I2C_SLV_S_1".
+#64 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_I2C_SLV_SDA" is renamed to "TEST POINT_TP_40MIL_I2C_SLV_S_2".
+#65 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_VCC_5V0_MINUS" is renamed to "TEST POINT_TP_40MIL_VCC_5V0_MIN".
+#66 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_VCC_5V0_MAIN" is renamed to "TEST POINT_TP_40MIL_VCC_5V0_MAI".
+#67 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_VCC_5V0_ILLUM" is renamed to "TEST POINT_TP_40MIL_VCC_5V0_ILL".
+#68 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_TFC_FRM_VD_OUT" is renamed to "TEST POINT_TP_40MIL_TFC_FRM_VD_".
+#69 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_SENSOR_RESETZ" is renamed to "TEST POINT_TP_40MIL_SENSOR_RESE".
+#70 WARNING(ORCAP-36006): Part Name "TEST POINT_TP_40MIL_VCC_ILLUM_REF" is renamed to "TEST POINT_TP_40MIL_VCC_ILLUM_R".
+#71 WARNING(ORCAP-36006): Part Name "CSD23381F4_2_DFN100X60X35-3N_CSD23381F4" is renamed to "CSD23381F4_2_DFN100X60X35-3N_CS".
+#72 WARNING(ORCAP-36006): Part Name "TPS659122YFFT_BGA81C40P9X9_360X360X63A_(S1+S2)_TPS659122YFFT" is renamed to "TPS659122YFFT_BGA81C40P9X9_360X".
+#73 WARNING(ORCAP-36042): Pin "PGND4" is renamed to "PGND4#A5" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#74 WARNING(ORCAP-36042): Pin "VINDCDC4" is renamed to "VINDCDC4#A7" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#75 WARNING(ORCAP-36042): Pin "PGND4" is renamed to "PGND4#B5" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#76 WARNING(ORCAP-36042): Pin "VINDCDC4" is renamed to "VINDCDC4#B7" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#77 WARNING(ORCAP-36042): Pin "AGND" is renamed to "AGND#C7" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#78 WARNING(ORCAP-36042): Pin "AGND" is renamed to "AGND#F3" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#79 WARNING(ORCAP-36042): Pin "VINDCDC1_1" is renamed to "VINDCDC1_1#H7" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#80 WARNING(ORCAP-36042): Pin "VINDCDC1_1" is renamed to "VINDCDC1_1#J7" as visible power pin of same name already exists in Package TPS659122YFFT-1 , U11-1: Power, TPS659122 (8.80, 0.90).
+#81 WARNING(ORCAP-36006): Part Name "CY7C68053-56BAXI_BGA56C50P8X8_500X500X100A_CUS_(S1+S2+S3+S4)_CY7C68053-56BAXI" is renamed to "CY7C68053-56BAXI_BGA56C50P8X8_5".
+#82 WARNING(ORCAP-36042): Pin "AVCC" is renamed to "AVCC#2D" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#83 WARNING(ORCAP-36042): Pin "AVCC" is renamed to "AVCC#1D" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#84 WARNING(ORCAP-36042): Pin "VCC" is renamed to "VCC#5A" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#85 WARNING(ORCAP-36042): Pin "VCC" is renamed to "VCC#1G" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#86 WARNING(ORCAP-36042): Pin "VCC" is renamed to "VCC#7E" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#87 WARNING(ORCAP-36042): Pin "VCC" is renamed to "VCC#8E" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#88 WARNING(ORCAP-36042): Pin "VCC" is renamed to "VCC#5C" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#89 WARNING(ORCAP-36042): Pin "VCC" is renamed to "VCC#5B" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#90 WARNING(ORCAP-36042): Pin "AGND" is renamed to "AGND#2F" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#91 WARNING(ORCAP-36042): Pin "AGND" is renamed to "AGND#1F" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#92 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#4B" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#93 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#1H" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#94 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#7D" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#95 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#8D" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#96 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#4C" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#97 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#4A" as visible power pin of same name already exists in Package CY7C68053-56BAXI-3 , U13-1: FX2, Data/Control (5.90, 1.40).
+#98 WARNING(ORCAP-36006): Part Name "PCA9306DQER_PCA9306DQER_PCA9306DQER" is renamed to "PCA9306DQER_PCA9306DQER_PCA9306".
+#99 WARNING(ORCAP-36042): Pin "IN" is renamed to "IN#2" as visible power pin of same name already exists in Package TPS2559 , U16: Power, PowerDistribution (2.00, 5.30).
+#100 WARNING(ORCAP-36042): Pin "IN" is renamed to "IN#3" as visible power pin of same name already exists in Package TPS2559 , U16: Power, PowerDistribution (2.00, 5.30).
+#101 WARNING(ORCAP-36042): Pin "IN" is renamed to "IN#4" as visible power pin of same name already exists in Package TPS2559 , U16: Power, PowerDistribution (2.00, 5.30).
+#102 WARNING(ORCAP-36042): Pin "OUT" is renamed to "OUT#7" as visible power pin of same name already exists in Package TPS2559 , U16: Power, PowerDistribution (2.00, 5.30).
+#103 WARNING(ORCAP-36042): Pin "OUT" is renamed to "OUT#8" as visible power pin of same name already exists in Package TPS2559 , U16: Power, PowerDistribution (2.00, 5.30).
+#104 WARNING(ORCAP-36042): Pin "OUT" is renamed to "OUT#9" as visible power pin of same name already exists in Package TPS2559 , U16: Power, PowerDistribution (2.00, 5.30).
+#105 WARNING(ORCAP-36006): Part Name "24AA128/IA81_4_SOIC127P600X175-8N_24AA128-I/SN" is renamed to "24AA128/IA81_4_SOIC127P600X175-".
+#106 WARNING(ORCAP-36006): Part Name "CSD13381F4_2_DFN100X60X35-3N_CSD13381F4" is renamed to "CSD13381F4_2_DFN100X60X35-3N_CS".
+#107 WARNING(ORCAP-36006): Part Name "CSD17578Q3A_3_SON_CSD17578Q3A_CSD17578Q3A" is renamed to "CSD17578Q3A_3_SON_CSD17578Q3A_C".
+#108 WARNING(ORCAP-36006): Part Name "TPL0102-100_0_SOP65P580X120-14_TPL0102-100PWR" is renamed to "TPL0102-100_0_SOP65P580X120-14_".
+#109 WARNING(ORCAP-36006): Part Name "SN74AHC1G04_0_SOT553_SN74AHC1G04" is renamed to "SN74AHC1G04_0_SOT553_SN74AHC1G0".
+#110 WARNING(ORCAP-36006): Part Name "OPT8241_5_OPT8241_DS_2V4_(S1+S2+S3)_OPT8241" is renamed to "OPT8241_5_OPT8241_DS_2V4_(S1+S2".
+#111 WARNING(ORCAP-36042): Pin "VMIXH" is renamed to "VMIXH#A5" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#112 WARNING(ORCAP-36042): Pin "VMIXH" is renamed to "VMIXH#A6" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#113 WARNING(ORCAP-36042): Pin "VMIXH" is renamed to "VMIXH#A9" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#114 WARNING(ORCAP-36042): Pin "VMIXH" is renamed to "VMIXH#A10" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#115 WARNING(ORCAP-36042): Pin "IOVDD" is renamed to "IOVDD#H1" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#116 WARNING(ORCAP-36042): Pin "AVDD" is renamed to "AVDD#D3" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#117 WARNING(ORCAP-36042): Pin "AVDD" is renamed to "AVDD#G17" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#118 WARNING(ORCAP-36042): Pin "IOVDD" is renamed to "IOVDD#F19" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#119 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#A11" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#120 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#A8" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#121 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#A7" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#122 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#A4" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#123 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#A15" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#124 WARNING(ORCAP-36042): Pin "AVSS" is renamed to "AVSS#H3" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#125 WARNING(ORCAP-36042): Pin "AVSS" is renamed to "AVSS#E3" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#126 WARNING(ORCAP-36042): Pin "AVSS" is renamed to "AVSS#H17" as visible power pin of same name already exists in Package OPT8241_5-3 , U3-1: OPT8241, Capture/Control (3.80, 3.00).
+#127 WARNING(ORCAP-36006): Part Name "1981568-1_4_1051640001_1051640001" is renamed to "1981568-1_4_1051640001_10516400".
+#128 WARNING(ORCAP-36006): Part Name "TPD2EUSB30_SOT35P100X50-3N_TPD2EUSB30" is renamed to "TPD2EUSB30_SOT35P100X50-3N_TPD2".
+#129 WARNING(ORCAP-36006): Part Name "W25Q16DW_2_SOIC127P600X175-8N_W25Q40BWSN" is renamed to "W25Q16DW_2_SOIC127P600X175-8N_W".
+#130 WARNING(ORCAP-36006): Part Name "MT47H32M16HR-25E-G_0_BGA84N80P6X15_1250X800X120_(S1+S2+S3)_MT47H32M16HR-25E-G_0" is renamed to "MT47H32M16HR-25E-G_0_BGA84N80P6".
+#131 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#A1" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#132 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#A9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#133 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#C1" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#134 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#C3" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#135 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#C7" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#136 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#C9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#137 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#E1" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#138 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#E9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#139 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#G1" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#140 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#G3" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#141 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#G7" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#142 WARNING(ORCAP-36042): Pin "VDDQ" is renamed to "VDDQ#G9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#143 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#J9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#144 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#M9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#145 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#R1" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#146 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#A3" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#147 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#A7" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#148 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#B2" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#149 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#B8" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#150 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#D2" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#151 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#D8" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#152 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#E3" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#153 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#E7" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#154 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#F2" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#155 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#F8" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#156 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#H2" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#157 WARNING(ORCAP-36042): Pin "VSSQ" is renamed to "VSSQ#H8" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#158 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#J3" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#159 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#N1" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#160 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#P9" as visible power pin of same name already exists in Package MT47H32M16HR-25E-G_0-3 , U7-1: DDR2, DDR2 (3.60, 1.30).
+#161 WARNING(ORCAP-36006): Part Name "OPT9221_BGA256C50P16X16_900X900X120A_(S1+S2+S3+S4+S5+S6+S7+S8+S9+S10)_OPT9221" is renamed to "OPT9221_BGA256C50P16X16_900X900".
+#162 WARNING(ORCAP-36042): Pin "VCCIO8" is renamed to "VCCIO8#A1" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#163 WARNING(ORCAP-36042): Pin "VCCIO7" is renamed to "VCCIO7#A16" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#164 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#B2" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#165 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#B15" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#166 WARNING(ORCAP-36042): Pin "VCCIO8" is renamed to "VCCIO8#C4" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#167 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#C5" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#168 WARNING(ORCAP-36042): Pin "VCCIO8" is renamed to "VCCIO8#C7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#169 WARNING(ORCAP-36042): Pin "VCCIO7" is renamed to "VCCIO7#C10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#170 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#C12" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#171 WARNING(ORCAP-36042): Pin "VCCIO7" is renamed to "VCCIO7#C13" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#172 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#D7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#173 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#D10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#174 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#E2" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#175 WARNING(ORCAP-36042): Pin "VCCIO1" is renamed to "VCCIO1#E3" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#176 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#E4" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#177 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#E13" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#178 WARNING(ORCAP-36042): Pin "VCCIO6" is renamed to "VCCIO6#E14" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#179 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#F6" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#180 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#F7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#181 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#F10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#182 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#F11" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#183 WARNING(ORCAP-36042): Pin "VCCIO1" is renamed to "VCCIO1#G3" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#184 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#G4" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#185 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#G6" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#186 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#G7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#187 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#G8" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#188 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#G9" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#189 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#G10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#190 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#G13" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#191 WARNING(ORCAP-36042): Pin "VCCIO6" is renamed to "VCCIO6#G14" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#192 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#H6" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#193 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#H7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#194 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#H8" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#195 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#H9" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#196 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#H10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#197 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#H11" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#198 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#H15" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#199 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#H16" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#200 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#J6" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#201 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#J7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#202 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#J8" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#203 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#J9" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#204 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#J10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#205 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#J11" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#206 WARNING(ORCAP-36042): Pin "VCCIO2" is renamed to "VCCIO2#K3" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#207 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#K4" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#208 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#K7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#209 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#K8" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#210 WARNING(ORCAP-36042): Pin "VCCINT" is renamed to "VCCINT#K11" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#211 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#K13" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#212 WARNING(ORCAP-36042): Pin "VCCIO5" is renamed to "VCCIO5#K14" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#213 WARNING(ORCAP-36042): Pin "VCCIO2" is renamed to "VCCIO2#M3" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#214 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#M4" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#215 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#M13" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#216 WARNING(ORCAP-36042): Pin "VCCIO5" is renamed to "VCCIO5#M14" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#217 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#N7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#218 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#N10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#219 WARNING(ORCAP-36042): Pin "VCCIO3" is renamed to "VCCIO3#P4" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#220 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#P5" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#221 WARNING(ORCAP-36042): Pin "VCCIO3" is renamed to "VCCIO3#P7" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#222 WARNING(ORCAP-36042): Pin "VCCIO4" is renamed to "VCCIO4#P10" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#223 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#P12" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#224 WARNING(ORCAP-36042): Pin "VCCIO4" is renamed to "VCCIO4#P13" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#225 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#R2" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#226 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#R15" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#227 WARNING(ORCAP-36042): Pin "VCCIO3" is renamed to "VCCIO3#T1" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#228 WARNING(ORCAP-36042): Pin "VCCIO4" is renamed to "VCCIO4#T16" as visible power pin of same name already exists in Package OPT9221-9 , U8-1: TFC, USB (4.20, 2.30).
+#229 ERROR(ORCAP-36004): Conflicting values of part name found on different sections of "U8".
+Conflicting values: OPT9221_BGA256C50P16X16_900X900X120A_(S1+S2+S3+S4+S5+S6+S7+S8+S9+S10)_OPT9221 & OPT9221_4_BGA256C50P16X16_900X900X120A_(S1+S2+S3+S4+S5+S6+S7+S8+S9+S10)_OPT9221 
+Property values of "Device","PCB FootPrint", "Class" and "Value" should be identical 
+ on all sections of the part.
+#230 ERROR(ORCAP-36018): Aborting Netlisting... Please correct the above errors and retry.

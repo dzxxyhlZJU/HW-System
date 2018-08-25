@@ -1,0 +1,90 @@
+\t (00:00:30) allegro_free_viewer 16.6 S038 (v16-6-112CV) Windows 32
+\t (00:00:30)     Journal start - Thu May 05 14:21:48 2016
+\t (00:00:30)         Host=HYAN User=hyan Pid=8908 CPUs=4
+\t (00:00:30) CmdLine= C:\Program Files\Cadence Design Systems\Allegro Free Physical Viewers 16.6\tools\pcb\bin\allegro_free_viewer.exe
+\t (00:00:30) 
+\d (00:00:30) Design opened: E:/Self/OPT8241/Software/OPT8241-CDK-EVM-HWDesignFiles/Electrical/OPT8241-CDK-EVM IB 10-50_REV2P0V1_Final deliverables/OPT8241-CDK-EVM IB 10-50/OPT8241-CDK-EVM IB 10-50_REV2P0V1.brd
+\i (00:00:31) zoom out 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom out 9041.50 4635.36
+\i (00:00:32) trapsize 20764
+\i (00:00:32) zoom out 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom out 14976.75 -659.47
+\i (00:00:32) trapsize 20764
+\i (00:00:32) zoom out 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom out 14976.75 -659.47
+\i (00:00:32) trapsize 20764
+\i (00:00:32) zoom out 1 
+\i (00:00:32) setwindow pcb
+\i (00:00:32) zoom out 14976.75 -659.47
+\i (00:00:32) trapsize 20764
+\i (00:00:37) zoom fit 
+\i (00:00:37) trapsize 1607
+\i (00:00:56) setwindow form.mini
+\i (00:00:56) FORM mini subcolor 1 
+\i (00:01:07) setwindow form.vf_vis
+\i (00:01:07) FORM vf_vis colorview_list Film: place_top 
+\i (00:01:14) FORM vf_vis colorview_list Film: SilkscreenTop 
+\i (00:01:22) FORM vf_vis 1 all_colorvisible YES 
+\i (00:01:41) setwindow pcb
+\i (00:01:41) show measure 
+\i (00:02:08) trapsize 1651
+\i (00:02:10) zoom out 1 
+\i (00:02:10) setwindow pcb
+\i (00:02:10) zoom out -1.65 -108.04
+\i (00:02:10) trapsize 3303
+\i (00:02:11) zoom in 1 
+\i (00:02:11) setwindow pcb
+\i (00:02:11) zoom in -477.23 -273.16
+\i (00:02:11) trapsize 1651
+\i (00:02:24) setwindow form.vf_vis
+\i (00:02:24) FORM vf_vis colorview_list Film: SoldermaskBottom 
+\i (00:02:29) FORM vf_vis colorview_list Film: SilkscreenBottom 
+\i (00:02:37) FORM vf_vis colorview_list Film: SilkscreenTop 
+\i (00:02:43) FORM vf_vis 1 all_colorvisible YES 
+\i (00:02:50) setwindow pcb
+\i (00:02:50) 3d_viewer 
+\i (00:02:50) setwindow pcb3D
+\i (00:02:50) trapsize 1651
+\i (00:03:12) setwindow pcb
+\i (00:03:12) show measure 
+\i (00:03:15) setwindow form.find
+\i (00:03:15) FORM find find_name J1 
+\i (00:03:15) setwindow pcb
+\i (00:03:15) trapsize 1586
+\i (00:03:17) setwindow text
+\i (00:03:17) close 
+\i (00:03:20) setwindow pcb
+\i (00:03:20) zoom in 1 
+\i (00:03:20) setwindow pcb
+\i (00:03:20) zoom in 988.16 64.48
+\i (00:03:20) trapsize 793
+\i (00:03:20) zoom in 1 
+\i (00:03:20) setwindow pcb
+\i (00:03:20) zoom in 988.16 64.48
+\i (00:03:20) trapsize 396
+\i (00:03:21) zoom out 1 
+\i (00:03:21) setwindow pcb
+\i (00:03:21) zoom out 988.16 64.49
+\i (00:03:21) trapsize 793
+\i (00:03:24) zoom in 1 
+\i (00:03:24) setwindow pcb
+\i (00:03:24) zoom in 1038.91 96.20
+\i (00:03:24) trapsize 396
+\i (00:03:25) zoom out 1 
+\i (00:03:25) setwindow pcb
+\i (00:03:25) zoom out 1038.91 96.20
+\i (00:03:25) trapsize 793
+\i (00:03:27) show measure 
+\i (00:44:50) setwindow form.find
+\i (00:44:50) FORM find find_name u12 
+\i (00:44:50) setwindow pcb
+\i (00:44:50) trapsize 435
+\i (00:44:53) setwindow text
+\i (00:44:53) close 
+\i (00:44:55) setwindow pcb
+\i (00:44:55) trapsize 571
+\i (03:36:07) exit 
+\t (03:36:08)     Journal end - Thu May 05 17:57:26 2016
