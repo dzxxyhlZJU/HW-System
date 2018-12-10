@@ -4,11 +4,11 @@ module I2C_main(
 	input reset_n,
 	input clk_in,
 	input clk_I2C,
-	output TempI2C_scl,
-	output TempI2C_sda_out,
-	input TempI2C_sda_in,
-	output TempI2C_ACKflg,
-	input [7:0] TempI2C_error_NM,
+	output Accel_scl,
+	output Accel_sda_out,
+	input Accel_sda_in,
+	output Accel_ACKflg,
+	input [7:0] AccelI2C_error_NM,
 	input configure_en,
 	output reg feedback_en,
 	output reg I2C_reconfig,
@@ -18,7 +18,7 @@ module I2C_main(
 	output reg [5:0] current_state,
 	output reg [5:0] next_state,
 	output reg PROMDataOk,
-	output reg TempDataOk,
+	output reg AccelDataOk,
 	output I2CIOStatus,
 	input CSB,
 	output [15:0] PROMData0,
@@ -161,7 +161,7 @@ begin
 			next_state = Temp_rst;
 		end
 
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			next_state = TempI2C_error;
 		end	
@@ -192,7 +192,7 @@ begin
 				next_state = PROMReadStep1;
 			end
 				
-			if(I2C_error_time>TempI2C_error_NM)
+			if(I2C_error_time>AccelI2C_error_NM)
 			begin
 				next_state = TempI2C_error;
 			end		
@@ -216,7 +216,7 @@ begin
 				next_state = PROMReadStep2;
 			end
 
-			if(I2C_error_time>TempI2C_error_NM)
+			if(I2C_error_time>AccelI2C_error_NM)
 			begin
 				next_state = TempI2C_error;
 			end			
@@ -239,7 +239,7 @@ begin
 			next_state = StartCvt;
 		end
 
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			next_state = TempI2C_error;
 		end	
@@ -268,7 +268,7 @@ begin
 			next_state = ReadADCResultStep1;
 		end
 
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			next_state = TempI2C_error;
 		end	
@@ -285,7 +285,7 @@ begin
 			next_state = ReadADCResultStep2;
 		end
 
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			next_state = TempI2C_error;
 		end	
@@ -335,7 +335,7 @@ begin
 	DelayEnable <= 0;
 	ADCResultDataTemp <= 0;
 	PROMDataOk <= 0;
-	TempDataOk <= 0;	
+	AccelDataOk <= 0;	
 end 
 else
 begin	
@@ -350,7 +350,7 @@ begin
 		DelayEnable <= 0;
 		ADCResultDataTemp <= 0;
 		PROMDataOk <= 0;
-		TempDataOk <= 0;
+		AccelDataOk <= 0;
 	end
 	
 	Temp_rst:						//1			
@@ -366,7 +366,7 @@ begin
 		DelayEnable <= 0;
 		ADCResultDataTemp <= 0;
 		PROMDataOk <= 0;
-		TempDataOk <= 0;		
+		AccelDataOk <= 0;		
 		if(I2C_done)
 		begin
 			I2C_en <= 0;
@@ -376,7 +376,7 @@ begin
 		begin
 			I2C_en <= 0;
 		end	
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			I2C_en <= 0;
 		end	
@@ -410,7 +410,7 @@ begin
 			begin
 				I2C_en <= 0;
 			end	
-			if(I2C_error_time>TempI2C_error_NM)
+			if(I2C_error_time>AccelI2C_error_NM)
 			begin
 				I2C_en <= 0;
 			end	
@@ -441,7 +441,7 @@ begin
 			begin
 				I2C_en <= 0;
 			end	
-			if(I2C_error_time>TempI2C_error_NM)
+			if(I2C_error_time>AccelI2C_error_NM)
 			begin
 				I2C_en <= 0;
 			end	
@@ -463,7 +463,7 @@ begin
 		feedback_en <= 0;
 		I2C_reconfig <= 0;
 		PROMDataOk <= 1;
-		TempDataOk <= 0;		
+		AccelDataOk <= 0;		
 	end
 	
 	StartCvt:						//5			
@@ -477,14 +477,14 @@ begin
 		begin
 			I2C_en <= 0;
 			PROMDataOk <= 1;
-			TempDataOk <= 0;
+			AccelDataOk <= 0;
 		end
 			
 		if(I2C_error_trig)
 		begin
 			I2C_en <= 0;
 		end	
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			I2C_en <= 0;
 		end	
@@ -516,7 +516,7 @@ begin
 		begin
 			I2C_en <= 0;
 		end	
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			I2C_en <= 0;
 		end	
@@ -539,7 +539,7 @@ begin
 		begin
 			I2C_en <= 0;
 		end	
-		if(I2C_error_time>TempI2C_error_NM)
+		if(I2C_error_time>AccelI2C_error_NM)
 		begin
 			I2C_en <= 0;
 		end	
@@ -556,7 +556,7 @@ begin
 		feedback_en <= 0;
 		I2C_reconfig <= 0;
 		PROMDataOk <= 1;
-		TempDataOk <= 1;
+		AccelDataOk <= 1;
 	end	
 	
 	Temp_done:				//9  
@@ -574,7 +574,7 @@ begin
 		I2C_NM <= 0;
 		PROMAddrTemp <= PROM0Addr;
 		PROMDataOk <= 1;
-		TempDataOk <= 0;		
+		AccelDataOk <= 0;		
 	end	
 	
 	TempI2C_error:				//10
@@ -591,9 +591,9 @@ end
 I2C_Bus I2C_Bus(
 .reset_n(reset_n),
 .clk_in(clk_I2C),		//I2C clk need to change 
-.I2C_scl(TempI2C_scl),
-.I2C_sda_out(TempI2C_sda_out),
-.I2C_sda_in(TempI2C_sda_in),
+.I2C_scl(Accel_scl),
+.I2C_sda_out(Accel_sda_out),
+.I2C_sda_in(Accel_sda_in),
 .I2C_wr(I2C_wr),
 .I2C_wdata(I2C_wdata),
 .I2C_rdata(I2C_rdata),
@@ -602,7 +602,7 @@ I2C_Bus I2C_Bus(
 .I2C_done(I2C_done),
 .I2C_error(I2C_error),
 .I2C_error_time(I2C_error_time),
-.I2C_ACKflg(TempI2C_ACKflg),
+.I2C_ACKflg(Accel_ACKflg),
 .ReadData(ReadData),
 .I2CIOStatus(I2CIOStatus)
 );

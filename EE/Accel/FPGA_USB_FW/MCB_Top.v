@@ -33,16 +33,16 @@
 `timescale 1 ns / 100 ps
 //synopsys translate_on
 module MCB_Top(
-	input clk_pad,				// system clock; 25MHz
-	inout [15:0] fdata,			//usb control chip data bus
-	output wire [1:0] faddr,			//usb endpoint address
+	input clk_pad,					// system clock; 25MHz
+	inout [15:0] fdata,				//usb control chip data bus
+	output wire [1:0] faddr,		//usb endpoint address
 	output wire slrd,				//usb read, active low
 	output wire slwr,				//usb read enable, active low
 	output wire sloe,				//usb write enable, active low
 	output wire pktend,				//usb pktend
 	output wire ifclk,				//usb IFCLK
-	input flaga,				//cmd_ep_empty
-	input flagd				//data_ep_full
+	input flaga,					//cmd_ep_empty
+	input flagd						//data_ep_full
 );  
 wire pll_locked;		//PLL locked
 //////clock wire list/////////
@@ -73,10 +73,6 @@ wire [15:0] adc_ch6_data;			//ADC Ch6 data
 wire [15:0] adc_ch7_data;			//ADC Ch7 data
 
 //////Command wire list/////////
-wire [15:0] FixationPattern;
-wire [1:0] BlinkSpeed;
-wire [15:0] cmd_th;
-wire [15:0] cmd_led;
 wire [15:0] data_to_fifo;		//data input to DATAFIFO
 wire [15:0] data_to_usb;		//data input to usb module
 wire [15:0] cmd_out;			//command output from usb module
@@ -121,10 +117,35 @@ wire [15:0] PROM3Data3;
 wire [15:0] PROM3Data4;
 wire [23:0] ADCResultData3;
 
-
-assign DataFifoWen = ROMRF ? ROMRFifoEn_RClk : data_wen;
-assign DataFifoWData = ROMRF ? ROMRFifoData : data_to_fifo;
 assign GalvoTopRst = reset_n && !GalvoRst;
+
+//Reset
+RESET U_RESET(
+	.clk(clk_25M),
+	.sw_rst(sw_rst),
+	.pll_locked(pll_locked),
+	.reset_n(reset_n),
+	.local_rst(local_rst),
+	.clr(aclr) 
+);
+
+//PLL
+MCB_PLL U_MCB_PLL(
+	.inclk0(clk_pad),
+	.c0(clk_25M),
+	.c1(clk_40M),
+	.c2(clk_10M),
+	.c3(clk_400K),
+	.locked(pll_locked)
+);
+
+//USB 2.0 clock
+USB_CLK U_USB_CLK(
+	.datain_h(1'b0),
+	.datain_l(1'b1),
+	.outclock(clk_25M),
+	.dataout (ifclk)
+);
 
 //command module
 CMD U_CMD(
@@ -176,15 +197,15 @@ CMD U_CMD(
 
 //command fifo
 CMDFIFO U_CMDFIFO(
-	.aclr    ( aclr           ),
-	.data    ( cmd_out        ),
-	.rdclk   ( clk_10M_       ),
-	.rdreq   ( cmd_ren | ROMWFifoEn),
-	.wrclk   ( clk_25M_       ),
-	.wrreq   ( cmd_wen        ),
-	.q       ( cmd            ),
-	.rdempty ( cmd_fifo_empty ),
-	.wrfull  ( cmd_fifo_full  )
+	.aclr(aclr),
+	.data(cmd_out),
+	.rdclk(clk_10M_),
+	.rdreq(cmd_ren),
+	.wrclk(clk_25M_),
+	.wrreq(cmd_wen),
+	.q(cmd),
+	.rdempty(cmd_fifo_empty),
+	.wrfull(cmd_fifo_full)
 );
 
 FX2_SLAVEFIFO U_FX2_SLAVEFIFO(
@@ -211,8 +232,8 @@ FX2_SLAVEFIFO U_FX2_SLAVEFIFO(
 DATAFIFO  U_DATAFIFO(
 	.aclr(aclr),
 	.wrclk(clk_25M),
-	.wrreq(DataFifoWen),
-	.data(DataFifoWData),
+	.wrreq(data_wen),
+	.data(data_to_fifo),
 	.rdclk(clk_25M_),
 	.rdreq(data_ren),
 	.q(data_to_usb),
@@ -312,90 +333,11 @@ InitMCB U_InitMCB(
 	.InitDelayDone(InitDelayDone)
 );
 
-//PLL
-MCB_PLL U_MCB_PLL (
-	.inclk0(clk_pad),
-	.c0(clk_25M),
-	.c1(clk_40M),
-	.c2(clk_10M),
-	.c3(clk_400K),
-	.locked(pll_locked)
-);
 
-CLK_PLL U_CLK_PLL(
-	.inclk0(clk_pad),
-	.c0(clk_1M)
-);
 
-//Reset
-RESET U_RESET(
-	.clk(clk_25M),
-	.sw_rst(sw_rst),
-	.pll_locked(pll_locked),
-	.reset_n(reset_n),
-	.local_rst(local_rst),
-	.clr(aclr) 
-);
 
-//USB 2.0 clock
-USB_CLK U_USB_CLK(
-	.datain_h(1'b0),
-	.datain_l(1'b1),
-	.outclock(clk_25M),
-	.dataout (ifclk)
-);
 
-/* DAC_MAX5702 U10_DAC_MAX5702(
-	.clk      (clk_10M ),
-	.reset_n  (reset_n ),
-	.cmd      (cmd_led ),
-	.dac_csb  (led_csb ),
-	.dac_sclk (led_sclk),
-	.dac_din  (led_din ),
-	.dac_clr  (led_clr ) 
-); */
 
-/* DAC_MAX5702 U50_DAC_MAX5702(
-	.clk      (clk_10M),
-	.reset_n  (reset_n),
-	.cmd      (cmd_th ),
-	.dac_csb  (th_csb ),
-	.dac_sclk (th_sclk),
-	.dac_din  (th_din ),
-	.dac_clr  (th_clr ) 
-);
 
-OCT_SAFETY_CONTROL U_OCT_SAFETY_CONTROL(
-	.clk(clk_10M),
-	.reset_n(local_rst),
-	.x_pos(x_pos),
-	.y_pos(y_pos),
-	.xy_galvo(xy_galvo),
-	.laser_pwr(laser_pwr),
-	.xy_galvo_rst(xy_galvo_rst),
-	.laser_pwr_rst(laser_pwr_rst),
-	.laser_interlock(laser_interlock),
-	.oct_engine_on_off(oct_engine_on_off),
-	.ROMWritingF(ROMWritingF),
-	.ROMErasingF(ROMErasingF),
-	.safety_status(safety_status) 
-); */
-
-/* ADC U_ADC(
-	.clk       (clk_10M      ) ,
-	.reset_n   (reset_n      ) ,
-	.cs_       (adc_cs_      ) ,
-	.sclk      (adc_sclk     ) ,
-	.din       (adc_dout     ) , // din connected to adc_dout
-	.dout      (adc_din      ) , // dout connected to adc_din
-	.ch0_data  (adc_ch0_data ) ,
-	.ch1_data  (adc_ch1_data ) ,
-	.ch2_data  (adc_ch2_data ) ,
-	.ch3_data  (adc_ch3_data ) ,
-	.ch4_data  (adc_ch4_data ) ,
-	.ch5_data  (adc_ch5_data ) ,
-	.ch6_data  (adc_ch6_data ) ,
-	.ch7_data  (adc_ch7_data )
-); */
 
 endmodule
