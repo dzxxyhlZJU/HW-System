@@ -110,24 +110,6 @@ begin
 	PROM0Data3 <= 0;
 	PROM0Data4 <= 0;
 	ADCResultData0 <= 0;
-	PROM1Data0 <= 0;
-	PROM1Data1 <= 0;
-	PROM1Data2 <= 0;
-	PROM1Data3 <= 0;
-	PROM1Data4 <= 0;
-	ADCResultData1 <= 0;	
-	PROM2Data0 <= 0;
-	PROM2Data1 <= 0;
-	PROM2Data2 <= 0;
-	PROM2Data3 <= 0;
-	PROM2Data4 <= 0;
-	ADCResultData2 <= 0;
-	PROM3Data0 <= 0;
-	PROM3Data1 <= 0;
-	PROM3Data2 <= 0;
-	PROM3Data3 <= 0;
-	PROM3Data4 <= 0;
-	ADCResultData3 <= 0;
 	AccelState <= 0;
 end
 else
@@ -182,12 +164,6 @@ begin
 		PROM0Data3 <= PROMData03;
 		PROM0Data4 <= PROMData04;
 		ADCResultData0 <= ADC0ResultData;
-		PROM2Data0 <= PROMData10;
-		PROM2Data1 <= PROMData11;
-		PROM2Data2 <= PROMData12;
-		PROM2Data3 <= PROMData13;
-		PROM2Data4 <= PROMData14;
-		ADCResultData2 <= ADC1ResultData;
 		AccelState <= ReadTemp1Pre;			
 	end
 	ReadTemp1Pre:			//4
@@ -259,7 +235,7 @@ I2C_main I2C_main(
 	.feedback_en(feedback_en),
 	.AccelDataOk(AccelDataOk),
 	.I2C_reconfig(I2C_reconfig),
-	.DelayClk(DelayClk),
+	.DelayClk(clk_I2C),
 	.I2CIOStatus(I2CIOStatus),
 	.CSB(CSB0),
 	.PROMData0(PROMData00),
