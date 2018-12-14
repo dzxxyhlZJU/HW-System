@@ -1,56 +1,135 @@
 `timescale 1ps/1ps 
 module I2C_Bus(
-	reset_n,
-	clk_in,
-	I2C_scl,
-	I2C_sda_out,
-	I2C_sda_in,
-	I2C_wr,
-	I2C_wdata,
-	I2C_rdata,
-	I2C_en,
-	I2C_NM,
-	I2C_done,
-	I2C_error,
-	I2C_error_time,
-	I2C_ACKflg,
-	ReadData,
-	I2CIOStatus
+	input reset_n,
+	input clk_in,		//400KHz
+	output reg I2C_scl,
+	output I2C_sda_out,
+	input I2C_sda_in,
+	input I2C_wr,
+	input [31:0] I2C_wdata,
+	input [31:0] I2C_rdata,
+	input I2C_en,
+	input [4:0] I2C_NM,
+	output reg I2C_done,
+	output reg I2C_error,
+	output reg [7:0] I2C_error_time,
+	output I2C_ACKflg,
+	output reg [23:0] ReadData,
+	output reg I2CIOStatus
 );
 
-input reset_n;
-input clk_in;
-input I2C_en;
-input I2C_wr;
-input [31:0] I2C_wdata;
-input [31:0] I2C_rdata;
-input [4:0] I2C_NM;
 
-output reg I2C_scl;
-output reg I2C_done;
-output I2C_ACKflg;
-output reg I2C_error;
-output I2CIOStatus;
 
 //reg I2C_sda;
 reg [5:0] cnt;
 reg [4:0] NMnow;
-output I2C_sda_out;
-input I2C_sda_in;
 reg [4:0] Data_Num;
 reg [7:0] I2C_rdata_temp;
-
 reg [5:0] temp;
 reg I2C_sda_out_temp;
-output reg [7:0] I2C_error_time;
 reg [23:0] ReadData_temp;
-output reg [23:0] ReadData;
 
 //assign I2C_ACKflg = ((cnt>=0)&&(cnt<=3)&&(NMnow))||(I2C_wr&&(NMnow==(I2C_NM-1))&&(cnt>=5)&&(cnt<=35));
 assign I2C_ACKflg = ((cnt>=0)&&(cnt<=3)&&(NMnow));
 assign I2C_sda_out = I2C_ACKflg ? 1'b0 : I2C_sda_out_temp;
+//assign I2CIOStatus = I2C_wr ? ((NMnow>0 && NMnow<I2C_NM) ? ((NMnow==1 && I2C_ACKflg) ? 1'b1 : !I2C_ACKflg):1'b0 ) :I2C_ACKflg;
 
-assign I2CIOStatus = I2C_wr ? ((NMnow>0 && NMnow<I2C_NM) ? ((NMnow==1 && I2C_ACKflg) ? 1'b1 : !I2C_ACKflg):1'b0 ) :I2C_ACKflg;
+reg [4:0] I2CBusState;
+parameter Init = 5'd0;
+parameter WaitBusEnable = 5'd1;
+parameter JudgeWR = 5'd2;
+//parameter WBusStart = 5'd3;
+parameter ChipWAddr = 5'd4;
+parameter WAck1 = 5'd5;
+parameter WRegAddr = 5'd6;
+parameter WAck2 = 5'd7;
+parameter WRegData = 5'd8;
+parameter WAck3 = 5'd9;
+parameter BusStop = 5'd10;
+
+always @(posedge clk_in or negedge reset_n)
+if(!reset_n)
+begin
+	cnt <= 0;
+	I2C_scl <= 1;
+	I2C_sda_out_temp <= 1;
+	I2C_done <= 0;
+	I2CIOStatus <= 0;
+	NMnow <= 0;
+	Data_Num <= 0;
+	//I2C_error <= 0;
+	I2C_error_time <= 0;
+	ReadData_temp <= 0;
+	ReadData <= 0;
+	I2CBusState <= Init;
+end
+else
+begin
+	case(I2CBusState)
+	Init:
+	begin
+		cnt <= 0;
+		I2C_scl <= 1;
+		I2C_sda_out_temp <= 1;
+		I2C_done <= 0;
+		I2CIOStatus <= 0;
+		I2CBusState <= WaitBusEnable;
+	end
+	
+	WaitBusEnable:			//Start
+	begin
+		if(I2C_en)
+		begin
+			I2C_sda_out_temp <= 0;
+			I2CBusState <= JudgeWR;
+		end
+		else
+		begin
+			I2C_sda_out_temp <= 1;
+			I2CBusState <= WaitBusEnable;
+		end
+	end
+	
+	JudgeWR:
+	begin
+		if(!I2C_wr)
+		begin
+			ChipWAddrBuf <= I2C_wdata[7:0];
+			I2CBusState <= ChipWAddrStep1;
+		end
+		else
+		begin
+			ChipWAddrBuf <= I2C_rdata[7:0];
+			I2CBusState <= ChipRAddr;
+		end
+	end
+	
+	ChipWAddrStep1:
+	begin
+		I2C_scl <= ~I2C_scl;
+		I2C_sda_out_temp <= ChipWAddrBuf[3'd7-cnt];
+		I2CBusState <= ChipWAddrStep2;
+	end
+	
+	ChipWAddrStep2:
+	begin
+		I2C_scl <= ~I2C_scl;
+		if(cnt<3'd7)
+		begin
+			cnt <= cnt+1'd1;
+			I2CIOStatus <= 0;
+			I2CBusState <= ChipWAddrStep1;
+		end
+		else
+		begin
+			cnt <= 0;
+			I2CIOStatus <= 1'b1;
+			I2CBusState <= ChipWAddrStep2;
+		end		
+	end
+	
+	endcase
+end
 
 always @(posedge clk_in or negedge reset_n)
 if(!reset_n)

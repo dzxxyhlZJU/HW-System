@@ -67,7 +67,7 @@ parameter RSum = 8'd13;				//
 //////////////Data Num///////////////
 parameter RstNum = 4'h3;
 parameter SignalRstNum = 4'h3;
-parameter IDCMDNum = 8'd3;
+parameter IDCMDNum = 8'd2;
 parameter IDRNum = 8'd1;
 
 parameter PROMCMDNum = 4'h2;
@@ -85,7 +85,8 @@ parameter AccelRst = 6'd1;
 parameter Delay1_100ms = 6'd2;
 parameter SignalRst = 6'd3;	
 parameter Delay2_100ms = 6'd4;
-parameter CheckID = 6'd5;		
+parameter CheckIDStep1 = 6'd5;	
+parameter CheckIDStep2 = 6'd5;		
 parameter Config = 6'd6;			
 parameter SmprtDiv = 6'd7;	
 parameter GyroConfig = 6'd8;
@@ -443,13 +444,13 @@ begin
 	end
 	
 	
-	CheckID:								//2
+	CheckIDStep1:								//2
 	begin	
 		DelayTime <= 0;
 		DelayEnable <= 0;
-		if(cnt_r < IDRNum)
+		if(cnt_r < IDCMDNum)
 		begin
-			I2C_wdata <= {AccelAddrW,IDAddr,AccelAddrR};	//16'hECA0
+			I2C_wdata <= {AccelAddrW,IDAddr};	//16'hECA0
 			I2C_wr <= 0;
 			I2C_NM <= IDCMDNum;
 			I2C_en <= 1;
@@ -467,6 +468,37 @@ begin
 		else
 		begin
 			cnt_r <= cnt_r;
+			I2C_wr <= I2C_wr;
+		end
+	end
+	
+	CheckIDStep2:					//3
+	begin
+		if(cnt_r < IDRNum)
+		begin
+			I2C_rdata <= {AccelAddrR,16'h0};		//32'h00ED0000
+			I2C_wr <= 1;
+			I2C_NM <= PROMReadNum;
+			I2C_en <= 1;
+			if(I2C_done)
+			begin
+				I2C_en <= 0;
+				PROMAddrTemp <= PROMAddrTemp + 8'h2;
+				cnt_r <= cnt_r+4'h1;				
+			end
+				
+			if(I2C_error_trig)
+			begin
+				I2C_en <= 0;
+			end	
+			if(I2C_error_time>AccelI2C_error_NM)
+			begin
+				I2C_en <= 0;
+			end	
+		end
+		else
+		begin
+			cnt_r <= 0;
 			I2C_wr <= I2C_wr;
 		end
 	end
