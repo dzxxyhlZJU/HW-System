@@ -1,50 +1,32 @@
 `timescale 1ps/1ps 
 module I2C_Bus(
-	reset_n,
-	clk_in,
-	I2C_scl,
-	I2C_sda_out,
-	I2C_sda_in,
-	I2C_wr,
-	I2C_wdata,
-	I2C_rdata,
-	I2C_en,
-	I2C_NM,
-	I2C_done,
-	I2C_error,
-	I2C_error_time,
-	I2C_ACKflg,
-	ReadData,
-	I2CIOStatus
+	input reset_n,
+	input clk_in,
+	output reg I2C_scl,
+	output I2C_sda_out,
+	input I2C_sda_in,
+	input I2C_wr,
+	input [31:0] I2C_wdata,
+	input [31:0] I2C_rdata,
+	input I2C_en,
+	input [4:0] I2C_NM,
+	output reg I2C_done,
+	output reg I2C_error,
+	output reg [7:0] I2C_error_time,
+	output I2C_ACKflg,
+	output reg [23:0] ReadData,
+	output I2CIOStatus
 );
-
-input reset_n;
-input clk_in;
-input I2C_en;
-input I2C_wr;
-input [31:0] I2C_wdata;
-input [31:0] I2C_rdata;
-input [4:0] I2C_NM;
-
-output reg I2C_scl;
-output reg I2C_done;
-output I2C_ACKflg;
-output reg I2C_error;
-output I2CIOStatus;
 
 //reg I2C_sda;
 reg [5:0] cnt;
 reg [4:0] NMnow;
-output I2C_sda_out;
-input I2C_sda_in;
 reg [4:0] Data_Num;
 reg [7:0] I2C_rdata_temp;
 
 reg [5:0] temp;
 reg I2C_sda_out_temp;
-output reg [7:0] I2C_error_time;
 reg [23:0] ReadData_temp;
-output reg [23:0] ReadData;
 
 //assign I2C_ACKflg = ((cnt>=0)&&(cnt<=3)&&(NMnow))||(I2C_wr&&(NMnow==(I2C_NM-1))&&(cnt>=5)&&(cnt<=35));
 assign I2C_ACKflg = ((cnt>=0)&&(cnt<=3)&&(NMnow));
