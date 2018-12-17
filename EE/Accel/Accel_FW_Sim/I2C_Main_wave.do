@@ -17,7 +17,7 @@ add wave -noupdate -radix hexadecimal /I2C_main_tb/I2C_main/I2C_rdata
 add wave -noupdate -radix unsigned /I2C_main_tb/I2C_main/I2C_Bus/I2C_NM
 add wave -noupdate -radix unsigned /I2C_main_tb/I2C_main/I2C_Bus/cnt
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {422727 ps} 0}
+WaveRestoreCursors {{Cursor 1} {283433 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 202
 configure wave -valuecolwidth 82
@@ -33,4 +33,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {435976 ps} {580761 ps}
+WaveRestoreZoom {181795 ps} {786568 ps}

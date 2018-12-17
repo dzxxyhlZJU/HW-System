@@ -351,7 +351,7 @@ begin
 		I2C_reconfig <= 0;
 		DelayTime <= 0;
 		DelayEnable <= 0;
-		AccelDataOk <= 0;	
+		AccelDataOk <= 1;	
 	end
 	
 	AccelI2C_error:				//10
