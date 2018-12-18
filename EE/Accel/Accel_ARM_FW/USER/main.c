@@ -111,8 +111,8 @@ int main(void)
  	POINT_COLOR=RED;//设置字体为红色 
 	LCD_ShowString(30,50,200,16,16,"Explorer STM32F4");	
 	LCD_ShowString(30,70,200,16,16,"MPU6050 TEST");	
-	LCD_ShowString(30,90,200,16,16,"ATOM@ALIENTEK");
-	LCD_ShowString(30,110,200,16,16,"2014/5/9");
+	LCD_ShowString(30,90,200,16,16,"Tiger Smart Bra");
+	LCD_ShowString(30,110,200,16,16,"2018/12/18");
 	while(mpu_dmp_init())
 	{
 		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
@@ -124,7 +124,7 @@ int main(void)
 	LCD_ShowString(30,150,200,16,16,"KEY0:UPLOAD ON/OFF");
 	POINT_COLOR=BLUE;//设置字体为蓝色 
  	LCD_ShowString(30,170,200,16,16,"UPLOAD ON ");	 
- 	LCD_ShowString(30,200,200,16,16," Temp:    . C");	
+ 	LCD_ShowString(30,200,200,16,16," Temp:    . C");			//erature
  	LCD_ShowString(30,220,200,16,16,"Pitch:    . C");	
  	LCD_ShowString(30,240,200,16,16," Roll:    . C");	 
  	LCD_ShowString(30,260,200,16,16," Yaw :    . C");	 
