@@ -73,58 +73,11 @@
         <LExpSel>0</LExpSel>
       </OPTXL>
       <OPTFL>
-        <tvExp>0</tvExp>
+        <tvExp>1</tvExp>
         <tvExpOptDlg>0</tvExpOptDlg>
         <IsCurrentTarget>1</IsCurrentTarget>
       </OPTFL>
-      <CpuCode>0</CpuCode>
-      <Books>
-        <Book>
-          <Number>0</Number>
-          <Title>Getting Started (STM32F4-Discovery)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\DM00037368.pdf</Path>
-        </Book>
-        <Book>
-          <Number>1</Number>
-          <Title>User Manual (STM32F4-Discovery)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\DM00039084.pdf</Path>
-        </Book>
-        <Book>
-          <Number>2</Number>
-          <Title>User Manual (MCBSTM32F400)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\mcbstm32f200.chm</Path>
-        </Book>
-        <Book>
-          <Number>3</Number>
-          <Title>Schematics (MCBSTM32F400)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\mcbstm32f400-schematics.pdf</Path>
-        </Book>
-        <Book>
-          <Number>4</Number>
-          <Title>Bill of Materials (STM32F4-Discovery)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\stm32f4discovery_bom.zip</Path>
-        </Book>
-        <Book>
-          <Number>5</Number>
-          <Title>Gerber Files (STM32F4-Discovery)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\stm32f4discovery_gerber.zip</Path>
-        </Book>
-        <Book>
-          <Number>6</Number>
-          <Title>Schematics (STM32F4-Discovery)</Title>
-          <Path>D:\tools\mdk5.14\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Documents\stm32f4discovery_sch.zip</Path>
-        </Book>
-        <Book>
-          <Number>7</Number>
-          <Title>MCBSTM32F400 Evaluation Board Web Page (MCBSTM32F400)</Title>
-          <Path>http://www.keil.com/mcbstm32f400/</Path>
-        </Book>
-        <Book>
-          <Number>8</Number>
-          <Title>STM32F4-Discovery Web Page (STM32F4-Discovery)</Title>
-          <Path>http://www.st.com/web/catalog/tools/FM116/SC959/SS1532/LN1199/PF252419</Path>
-        </Book>
-      </Books>
+      <CpuCode>18</CpuCode>
       <DebugOpt>
         <uSim>0</uSim>
         <uTrg>1</uTrg>
@@ -147,7 +100,8 @@
         <tRSysVw>1</tRSysVw>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
-        <nTsel>6</nTsel>
+        <bEvRecOn>1</bEvRecOn>
+        <nTsel>0</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -158,18 +112,18 @@
         <tDlgDll></tDlgDll>
         <tDlgPa></tDlgPa>
         <tIfile></tIfile>
-        <pMon>Segger\JL2CM3.dll</pMon>
+        <pMon>BIN\UL2CM3.DLL</pMon>
       </DebugOpt>
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>JL2CM3</Key>
-          <Name>-U799713843 -O78 -S1 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(4) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:STM32F407ZG$Flash\STM32F4xx_1024.FLM)</Name>
+          <Key>UL2CM3</Key>
+          <Name>UL2CM3(-S0 -C0 -P0 ) -FN1 -FC1000 -FD20000000 -FF0STM32F4xx_1024 -FL0100000 -FS08000000 -FP0($$Device:STM32F407ZGTx$CMSIS\Flash\STM32F4xx_1024.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>UL2CM3</Key>
-          <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32F407ZG$Flash\STM32F4xx_1024.FLM))</Name>
+          <Key>JL2CM3</Key>
+          <Name>-U799713843 -O78 -S1 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight SW-DP") -D00(1BA01477) -L00(4) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:STM32F407ZGTx$CMSIS\Flash\STM32F4xx_1024.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -204,6 +158,23 @@
       </DebugFlag>
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
+      <bLintAuto>0</bLintAuto>
+      <bAutoGenD>0</bAutoGenD>
+      <LntExFlags>0</LntExFlags>
+      <pMisraName></pMisraName>
+      <pszMrule></pszMrule>
+      <pSingCmds></pSingCmds>
+      <pMultCmds></pMultCmds>
+      <pMisraNamep></pMisraNamep>
+      <pszMrulep></pszMrulep>
+      <pSingCmdsp></pSingCmdsp>
+      <pMultCmdsp></pMultCmdsp>
+      <DebugDescription>
+        <Enable>1</Enable>
+        <EnableLog>0</EnableLog>
+        <Protocol>2</Protocol>
+        <DbgClock>10000000</DbgClock>
+      </DebugDescription>
     </TargetOption>
   </Target>
 
@@ -218,7 +189,6 @@
       <FileNumber>1</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
@@ -231,7 +201,6 @@
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\stm32f4xx_it.c</PathWithFileName>
@@ -244,7 +213,6 @@
       <FileNumber>3</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\system_stm32f4xx.c</PathWithFileName>
@@ -256,7 +224,7 @@
 
   <Group>
     <GroupName>HARDWARE</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -265,7 +233,6 @@
       <FileNumber>4</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\LED\led.c</PathWithFileName>
@@ -277,8 +244,7 @@
       <GroupNumber>2</GroupNumber>
       <FileNumber>5</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\KEY\key.c</PathWithFileName>
@@ -291,7 +257,6 @@
       <FileNumber>6</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\LCD\lcd.c</PathWithFileName>
@@ -304,7 +269,6 @@
       <FileNumber>7</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\IIC\myiic.c</PathWithFileName>
@@ -317,7 +281,6 @@
       <FileNumber>8</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\MPU6050\mpu6050.c</PathWithFileName>
@@ -330,7 +293,6 @@
       <FileNumber>9</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\MPU6050\eMPL\inv_mpu.c</PathWithFileName>
@@ -343,7 +305,6 @@
       <FileNumber>10</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\HARDWARE\MPU6050\eMPL\inv_mpu_dmp_motion_driver.c</PathWithFileName>
@@ -355,7 +316,7 @@
 
   <Group>
     <GroupName>SYSTEM</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -364,7 +325,6 @@
       <FileNumber>11</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\SYSTEM\delay\delay.c</PathWithFileName>
@@ -376,8 +336,7 @@
       <GroupNumber>3</GroupNumber>
       <FileNumber>12</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <Focus>0</Focus>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\SYSTEM\sys\sys.c</PathWithFileName>
@@ -390,7 +349,6 @@
       <FileNumber>13</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\SYSTEM\usart\usart.c</PathWithFileName>
@@ -411,7 +369,6 @@
       <FileNumber>14</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\CORE\startup_stm32f40_41xxx.s</PathWithFileName>
@@ -423,7 +380,7 @@
 
   <Group>
     <GroupName>FWLIB</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -432,7 +389,6 @@
       <FileNumber>15</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\misc.c</PathWithFileName>
@@ -445,7 +401,6 @@
       <FileNumber>16</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_fsmc.c</PathWithFileName>
@@ -458,7 +413,6 @@
       <FileNumber>17</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_gpio.c</PathWithFileName>
@@ -471,7 +425,6 @@
       <FileNumber>18</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_rcc.c</PathWithFileName>
@@ -484,7 +437,6 @@
       <FileNumber>19</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_syscfg.c</PathWithFileName>
@@ -497,7 +449,6 @@
       <FileNumber>20</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_usart.c</PathWithFileName>
@@ -510,7 +461,6 @@
       <FileNumber>21</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\FWLIB\src\stm32f4xx_tim.c</PathWithFileName>
@@ -531,7 +481,6 @@
       <FileNumber>22</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\USMART\usmart.c</PathWithFileName>
@@ -544,7 +493,6 @@
       <FileNumber>23</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\USMART\usmart_config.c</PathWithFileName>
@@ -557,7 +505,6 @@
       <FileNumber>24</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\USMART\usmart_str.c</PathWithFileName>
@@ -578,7 +525,6 @@
       <FileNumber>25</FileNumber>
       <FileType>5</FileType>
       <tvExp>0</tvExp>
-      <Focus>0</Focus>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\readme.txt</PathWithFileName>
