@@ -32,8 +32,8 @@ wire [7:0] I2C_error_time;
 wire [23:0] ReadData;
 //////////////I2C BUS///////////////
 /////Device address set AD0 to GND////
-parameter AccelAddrW = 8'hD0;		//AD0=0;
-parameter AccelAddrR = 8'hD1;		//AD1=1;
+parameter AccelAddrW = 8'h68;		//AD0=0;
+parameter AccelAddrR = 8'h69;		//AD1=1;
 
 //////////////Accel Addr//////////////
 parameter RstValue = 8'h40;
@@ -136,7 +136,8 @@ begin
 	case(current_state)	
 	AccelInit:						//0
 	begin
-		next_state = AccelRst;
+//		next_state = AccelRst;
+		next_state = CheckIDStep1;
 	end
 	
 	AccelRst:					//1
@@ -269,11 +270,11 @@ begin
 			I2C_en <= 0;
 	end
 	
-	Delay1_100ms:
+	Delay1_100ms:					//2
 	begin
 		I2C_en <= 0;
-//		DelayTime <= 4000;			//100ms
-		DelayTime <= 10;			//test
+		DelayTime <= 16'd4000;			//100ms
+//		DelayTime <= 16'd10;			//test
 		DelayEnable <= 1;
 	end
 	
@@ -300,8 +301,8 @@ begin
 	Delay2_100ms:
 	begin
 		I2C_en <= 0;
-//		DelayTime <= 4000;			//100ms
-		DelayTime <= 10;			//test
+		DelayTime <= 16'd4000;			//100ms
+//		DelayTime <= 16'd10;			//test
 		DelayEnable <= 1;
 	end	
 	

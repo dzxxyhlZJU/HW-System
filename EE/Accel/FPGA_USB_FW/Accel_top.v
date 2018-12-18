@@ -34,13 +34,25 @@
 //synopsys translate_on
 
 module Accel_top(
-	input clk_in,			//25MHz
-	input clk_I2C,			//400KHz
-	input reset_n,
+	input clk_pad,			//25MHz
+//	input clk_I2C,			//400KHz
+//	input reset_n,
 	output wire Accel_scl,	
 	inout Accel_sda,
 	output reg [2:0] AccelState
 );
+
+//////clock//////////
+wire clk_40M;
+wire clk_25M;		//25MHz
+wire clk_10M;		//10MHz
+wire clk_400K;
+wire pll_locked;		//PLL locked
+//////Reset wire list/////////
+wire reset_n;						//reset; active low
+wire local_rst;						//local reset after power on
+wire aclr;							//aclr; active high
+wire sw_rst;
 
 wire Accel_sda_in;
 wire Accel_sda_out;
@@ -70,7 +82,7 @@ assign Accel_sda = I2CIOStatus ? 1'bz : Accel_sda_out;
 
 assign Accel_sda_in = I2CIOStatus ? Accel_sda : 1'b0; 
 
-always @(negedge reset_n or posedge clk_in)
+always @(negedge reset_n or posedge clk_25M)
 if(!reset_n)
 begin
 	cnt <= 0;
@@ -127,9 +139,9 @@ end
 
 I2C_main I2C_main(
 	.reset_n(reset_n),
-	.clk_in(clk_in),
-	.DelayClk(clk_I2C),
-	.clk_I2C(clk_I2C),
+	.clk_in(clk_25M),
+	.DelayClk(clk_400K),
+	.clk_I2C(clk_400K),
 	.Accel_scl(Accel_scl),
 	.Accel_sda_out(Accel_sda_out),
 	.Accel_sda_in(Accel_sda_in),
@@ -141,6 +153,29 @@ I2C_main I2C_main(
 	.AccelDataOk(AccelDataOk),
 	.I2CIOStatus(I2CIOStatus)
 );
+
+//Reset
+RESET U_RESET(
+	.clk(clk_25M),
+	.sw_rst(sw_rst),
+	.pll_locked(pll_locked),
+	.reset_n(reset_n),
+	.local_rst(local_rst),
+	.clr(aclr) 
+);
+
+//PLL
+MCB_PLL U_MCB_PLL(
+	.inclk0(clk_pad),
+	.c0(clk_25M),
+	.c1(clk_40M),
+	.c2(clk_10M),
+	.c3(clk_400K),
+	.locked(pll_locked)
+);
+
+
+
 
 endmodule
 

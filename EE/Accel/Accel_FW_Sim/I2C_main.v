@@ -269,15 +269,15 @@ begin
 			I2C_en <= 0;
 	end
 	
-	Delay1_100ms:
+	Delay1_100ms:				//2
 	begin
 		I2C_en <= 0;
-//		DelayTime <= 4000;			//100ms
-		DelayTime <= 10;			//test
+//		DelayTime <= 16'd4000;			//100ms
+		DelayTime <= 16'd10;			//test
 		DelayEnable <= 1;
 	end
 	
-	SignalRst:						//1			
+	SignalRst:					//3		
 	begin
 		I2C_wdata <= {AccelAddrW,SignalRstAddr,SignalRstValue};		//16'EC1E 
 		I2C_wr <= 0;
@@ -297,15 +297,15 @@ begin
 			I2C_en <= 0;
 	end
 	
-	Delay2_100ms:
+	Delay2_100ms:				//4
 	begin
 		I2C_en <= 0;
-//		DelayTime <= 4000;			//100ms
-		DelayTime <= 10;			//test
+//		DelayTime <= 16'd4000;			//100ms
+		DelayTime <= 16'd10;			//test
 		DelayEnable <= 1;
 	end	
 	
-	CheckIDStep1:								//2
+	CheckIDStep1:				//5
 	begin	
 		DelayTime <= 0;
 		DelayEnable <= 0;
@@ -323,7 +323,7 @@ begin
 			I2C_en <= 0;
 	end
 	
-	CheckIDStep2:								//2
+	CheckIDStep2:				//6
 	begin	
 		I2C_rdata <= {AccelAddrR,24'h0};		//32'hED000000  
 		I2C_wr <= 1;
