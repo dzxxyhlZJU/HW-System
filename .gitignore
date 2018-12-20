@@ -12,3 +12,6 @@
 /EE/Accel/Accel_ARM_FW/USER/DebugConfig
 /EE/Accel/Accel_ARM_FW/USER/JLinkLog.txt
 /EE/Accel/Accel_ARM_FW/USER/MPU6050.uvguix.Administrator
+/EE/Accel/Accel_ARM_Program/.vs
+/EE/Accel/Accel_ARM_Program/SerialPortConnection/bin
+/EE/Accel/Accel_ARM_Program/SerialPortConnection/obj
