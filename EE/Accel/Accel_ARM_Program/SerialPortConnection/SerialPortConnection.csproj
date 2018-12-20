@@ -8,8 +8,8 @@
     <ProjectGuid>{08018F75-3357-41C6-BA8F-39A237E1076B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SerialPortConnection</RootNamespace>
-    <AssemblyName>SerialPortConnection</AssemblyName>
+    <RootNamespace>AccelSmart</RootNamespace>
+    <AssemblyName>AccelSmart</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

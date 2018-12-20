@@ -11,7 +11,7 @@ namespace INIFILE
         {
             string strPath = AppDomain.CurrentDomain.BaseDirectory;
             _file = new IniFile(strPath + "Cfg.ini");
-            G_BAUDRATE = _file.ReadString("CONFIG", "BaudRate", "4800");    //读数据，下同
+            G_BAUDRATE = _file.ReadString("CONFIG", "BaudRate", "500000");    //读数据，下同
             G_DATABITS = _file.ReadString("CONFIG", "DataBits", "8");
             G_STOP = _file.ReadString("CONFIG", "StopBits", "1");
             G_PARITY = _file.ReadString("CONFIG", "Parity", "NONE");
@@ -30,7 +30,7 @@ namespace INIFILE
 
         private static IniFile _file;//内置了一个对象
 
-        public static string G_BAUDRATE = "1200";//给ini文件赋新值，并且影响界面下拉框的显示
+        public static string G_BAUDRATE = "500000";//给ini文件赋新值，并且影响界面下拉框的显示
         public static string G_DATABITS = "8";
         public static string G_STOP = "1";
         public static string G_PARITY = "NONE";

@@ -57,6 +57,9 @@ namespace SerialPortConnection
                 case "115200":
                     cbBaudRate.SelectedIndex = 8;
                     break;
+                case "500000":
+                    cbBaudRate.SelectedIndex = 9;
+                    break;
                 default:
                     {
                         MessageBox.Show("波特率预置参数错误。");
@@ -169,7 +172,7 @@ namespace SerialPortConnection
             {
                 //输出当前时间
                 DateTime dt = DateTime.Now;
-                txtReceive.Text += dt.GetDateTimeFormats('f')[0].ToString() + "\r\n";
+            //    txtReceive.Text += dt.GetDateTimeFormats('f')[0].ToString() + "\r\n";
                 txtReceive.SelectAll();
                 txtReceive.SelectionColor = Color.Blue;         //改变字体的颜色
 
@@ -532,6 +535,11 @@ namespace SerialPortConnection
             {
                 e.Handled = true;
             }
+        }
+
+        private void cbBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
