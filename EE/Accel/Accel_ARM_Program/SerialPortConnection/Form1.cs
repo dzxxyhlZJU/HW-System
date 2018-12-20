@@ -302,108 +302,148 @@ namespace SerialPortConnection
         }
 
         bool UartOpened = false;
-        //开关按钮
         private void btnSwitch_Click(object sender, EventArgs e)
         {
-            //serialPort1.IsOpen
             if (!UartOpened)
             {
+                sp1.PortName = cbSerial.Text;
+                sp1.BaudRate = Convert.ToInt32(cbBaudRate.Text, 10);
                 try
                 {
-                    //设置串口号
-                    string serialName = cbSerial.SelectedItem.ToString();
-                    sp1.PortName = serialName;
-
-                    //设置各“串口设置”
-                    string strBaudRate = cbBaudRate.Text;
-                    string strDateBits = cbDataBits.Text;
-                    string strStopBits = cbStop.Text;
-                    Int32 iBaudRate = Convert.ToInt32(strBaudRate);
-                    Int32 iDateBits = Convert.ToInt32(strDateBits);
-
-                    sp1.BaudRate = iBaudRate;       //波特率
-                    sp1.DataBits = iDateBits;       //数据位
-                    switch (cbStop.Text)            //停止位
-                    {
-                        case "1":
-                            sp1.StopBits = StopBits.One;
-                            break;
-                        case "1.5":
-                            sp1.StopBits = StopBits.OnePointFive;
-                            break;
-                        case "2":
-                            sp1.StopBits = StopBits.Two;
-                            break;
-                        default:
-                            MessageBox.Show("Error：参数不正确!", "Error");
-                            break;
-                    }
-                    switch (cbParity.Text)             //校验位
-                    {
-                        case "无":
-                            sp1.Parity = Parity.None;
-                            break;
-                        case "奇校验":
-                            sp1.Parity = Parity.Odd;
-                            break;
-                        case "偶校验":
-                            sp1.Parity = Parity.Even;
-                            break;
-                        default:
-                            MessageBox.Show("Error：参数不正确!", "Error");
-                            break;
-                    }
-
-                    //if (sp1.IsOpen == true)//如果打开状态，则先关闭一下
-                    //{
-                    //    sp1.Close();
-                    //}
-                    //状态栏设置
-                    tsSpNum.Text = "串口号：" + sp1.PortName + "|";
-                    tsBaudRate.Text = "波特率：" + sp1.BaudRate + "|";
-                    tsDataBits.Text = "数据位：" + sp1.DataBits + "|";
-                    tsStopBits.Text = "停止位：" + sp1.StopBits + "|";
-                    tsParity.Text = "校验位：" + sp1.Parity + "|";
-
-                    //设置必要控件不可用
-                    cbSerial.Enabled = false;
-                    cbBaudRate.Enabled = false;
-                    cbDataBits.Enabled = false;
-                    cbStop.Enabled = false;
-                    cbParity.Enabled = false;
-
                     sp1.Open();     //打开串口
-                    UartOpened = true;
                     btnSwitch.Text = "关闭串口";
+                    cbSerial.Enabled = false;//关闭使能
+                    cbBaudRate.Enabled = false;
+                    UartOpened = true;
+                //    serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);//串口接收处理函数
                 }
-                catch (System.Exception ex)
+                catch
                 {
-                    MessageBox.Show("Error:" + ex.Message, "Error");
-                    tmSend.Enabled = false;
-                    return;
+                    MessageBox.Show("串口打开失败！");
                 }
             }
             else
             {
-                //状态栏设置
-                tsSpNum.Text = "串口号：未指定|";
-                tsBaudRate.Text = "波特率：未指定|";
-                tsDataBits.Text = "数据位：未指定|";
-                tsStopBits.Text = "停止位：未指定|";
-                tsParity.Text = "校验位：未指定|";
-                //恢复控件功能
-                //设置必要控件不可用
-                cbSerial.Enabled = true;
-                cbBaudRate.Enabled = true;
-                cbDataBits.Enabled = true;
-                cbStop.Enabled = true;
-                cbParity.Enabled = true;
-                UartOpened = false;
-                sp1.Close();                    //关闭串口
-                btnSwitch.Text = "打开串口";
-                tmSend.Enabled = false;         //关闭计时器
+                try
+                {
+                    sp1.Close();     //关闭串口
+                    btnSwitch.Text = "打开串口";
+                    cbSerial.Enabled = true;//打开使能
+                    cbBaudRate.Enabled = true;
+                    UartOpened = false;
+                }
+                catch
+                {
+                    MessageBox.Show("串口关闭失败！");
+                }
             }
+
         }
+
+
+
+        //开关按钮
+        //private void btnSwitch_Click(object sender, EventArgs e)
+        //{
+        //    //serialPort1.IsOpen
+        //    if (!UartOpened)
+        //    {
+        //        try
+        //        {
+        //            //设置串口号
+        //            string serialName = cbSerial.SelectedItem.ToString();
+        //            sp1.PortName = serialName;
+
+        //            //设置各“串口设置”
+        //            string strBaudRate = cbBaudRate.Text;
+        //            string strDateBits = cbDataBits.Text;
+        //            string strStopBits = cbStop.Text;
+        //            Int32 iBaudRate = Convert.ToInt32(strBaudRate);
+        //            Int32 iDateBits = Convert.ToInt32(strDateBits);
+
+        //            sp1.BaudRate = iBaudRate;       //波特率
+        //            sp1.DataBits = iDateBits;       //数据位
+        //            switch (cbStop.Text)            //停止位
+        //            {
+        //                case "1":
+        //                    sp1.StopBits = StopBits.One;
+        //                    break;
+        //                case "1.5":
+        //                    sp1.StopBits = StopBits.OnePointFive;
+        //                    break;
+        //                case "2":
+        //                    sp1.StopBits = StopBits.Two;
+        //                    break;
+        //                default:
+        //                    MessageBox.Show("Error：参数不正确!", "Error");
+        //                    break;
+        //            }
+        //            switch (cbParity.Text)             //校验位
+        //            {
+        //                case "无":
+        //                    sp1.Parity = Parity.None;
+        //                    break;
+        //                case "奇校验":
+        //                    sp1.Parity = Parity.Odd;
+        //                    break;
+        //                case "偶校验":
+        //                    sp1.Parity = Parity.Even;
+        //                    break;
+        //                default:
+        //                    MessageBox.Show("Error：参数不正确!", "Error");
+        //                    break;
+        //            }
+
+        //            //if (sp1.IsOpen == true)//如果打开状态，则先关闭一下
+        //            //{
+        //            //    sp1.Close();
+        //            //}
+        //            //状态栏设置
+        //            tsSpNum.Text = "串口号：" + sp1.PortName + "|";
+        //            tsBaudRate.Text = "波特率：" + sp1.BaudRate + "|";
+        //            tsDataBits.Text = "数据位：" + sp1.DataBits + "|";
+        //            tsStopBits.Text = "停止位：" + sp1.StopBits + "|";
+        //            tsParity.Text = "校验位：" + sp1.Parity + "|";
+
+        //            //设置必要控件不可用
+        //            cbSerial.Enabled = false;
+        //            cbBaudRate.Enabled = false;
+        //            cbDataBits.Enabled = false;
+        //            cbStop.Enabled = false;
+        //            cbParity.Enabled = false;
+
+        //            sp1.Open();     //打开串口
+        //            UartOpened = true;
+        //            btnSwitch.Text = "关闭串口";
+        //        }
+        //        catch (System.Exception ex)
+        //        {
+        //            MessageBox.Show("Error:" + ex.Message, "Error");
+        //            tmSend.Enabled = false;
+        //            return;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //状态栏设置
+        //        tsSpNum.Text = "串口号：未指定|";
+        //        tsBaudRate.Text = "波特率：未指定|";
+        //        tsDataBits.Text = "数据位：未指定|";
+        //        tsStopBits.Text = "停止位：未指定|";
+        //        tsParity.Text = "校验位：未指定|";
+        //        //恢复控件功能
+        //        //设置必要控件不可用
+        //        cbSerial.Enabled = true;
+        //        cbBaudRate.Enabled = true;
+        //        cbDataBits.Enabled = true;
+        //        cbStop.Enabled = true;
+        //        cbParity.Enabled = true;
+        //        UartOpened = false;
+        //        sp1.Close();                    //关闭串口
+        //        btnSwitch.Text = "打开串口";
+        //        tmSend.Enabled = false;         //关闭计时器
+        //    }
+        //}
 
         //清空按钮
         private void btnClear_Click(object sender, EventArgs e)
