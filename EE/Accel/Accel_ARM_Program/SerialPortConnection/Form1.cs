@@ -20,6 +20,7 @@ namespace SerialPortConnection
         public Form1()
         {
             InitializeComponent();
+            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;//设置该属性 为false
         }
 
         //加载
@@ -148,7 +149,7 @@ namespace SerialPortConnection
            // cbDataBits.SelectedIndex = 3;
            // cbStop.SelectedIndex = 0;
           //  cbParity.SelectedIndex = 0;
-            sp1.BaudRate = 9600;
+            sp1.BaudRate = 500000;
 
             Control.CheckForIllegalCrossThreadCalls = false;    //这个类中我们不检查跨线程的调用是否合法(因为.net 2.0以后加强了安全机制,，不允许在winform中直接跨线程访问控件的属性)
             sp1.DataReceived += new SerialDataReceivedEventHandler(sp1_DataReceived);
@@ -179,7 +180,8 @@ namespace SerialPortConnection
                 byte[] byteRead = new byte[sp1.BytesToRead];    //BytesToRead:sp1接收的字符个数
                 if (rdSendStr.Checked)                          //'发送字符串'单选按钮
                 {
-                    txtReceive.Text += sp1.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
+ //                   txtReceive.Text += sp1.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
+                    txtReceive.Text += sp1.ReadLine(); //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
                     sp1.DiscardInBuffer();                      //清空SerialPort控件的Buffer 
                 }
                 else                                            //'发送16进制按钮'
@@ -205,7 +207,8 @@ namespace SerialPortConnection
                           
                             strRcv += receivedData[i].ToString("X2");  //16进制显示
                         }
-                        txtReceive.Text += strRcv + "\r\n";
+ //                       txtReceive.Text += strRcv + "\r\n";
+                        txtReceive.Text += strRcv;
                     }
                     catch (System.Exception ex)
                     {
@@ -298,11 +301,12 @@ namespace SerialPortConnection
             }
         }
 
+        bool UartOpened = false;
         //开关按钮
         private void btnSwitch_Click(object sender, EventArgs e)
         {
             //serialPort1.IsOpen
-            if (!sp1.IsOpen)
+            if (!UartOpened)
             {
                 try
                 {
@@ -350,10 +354,10 @@ namespace SerialPortConnection
                             break;
                     }
 
-                    if (sp1.IsOpen == true)//如果打开状态，则先关闭一下
-                    {
-                        sp1.Close();
-                    }
+                    //if (sp1.IsOpen == true)//如果打开状态，则先关闭一下
+                    //{
+                    //    sp1.Close();
+                    //}
                     //状态栏设置
                     tsSpNum.Text = "串口号：" + sp1.PortName + "|";
                     tsBaudRate.Text = "波特率：" + sp1.BaudRate + "|";
@@ -369,6 +373,7 @@ namespace SerialPortConnection
                     cbParity.Enabled = false;
 
                     sp1.Open();     //打开串口
+                    UartOpened = true;
                     btnSwitch.Text = "关闭串口";
                 }
                 catch (System.Exception ex)
@@ -393,7 +398,7 @@ namespace SerialPortConnection
                 cbDataBits.Enabled = true;
                 cbStop.Enabled = true;
                 cbParity.Enabled = true;
-
+                UartOpened = false;
                 sp1.Close();                    //关闭串口
                 btnSwitch.Text = "打开串口";
                 tmSend.Enabled = false;         //关闭计时器

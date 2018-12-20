@@ -34,7 +34,7 @@ void usart1_niming_report(u8 fun,u8*data,u8 len)
 	u8 i;
 	if(len>28)return;	//最多28字节数据 
 	send_buf[len+3]=0;	//校验数置零
-	send_buf[0]=0X88;	//帧头
+	send_buf[0]=0x88;	//帧头
 	send_buf[1]=fun;	//功能字
 	send_buf[2]=len;	//数据长度
 	for(i=0;i<len;i++)
@@ -47,22 +47,26 @@ void usart1_niming_report(u8 fun,u8*data,u8 len)
 //发送加速度传感器数据和陀螺仪数据
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
 //gyrox,gyroy,gyroz:x,y,z三个方向上面的陀螺仪值
-void mpu6050_send_data(short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz)
+void mpu6050_send_data(short temperature,short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz)
 {
-	u8 tbuf[12]; 
-	tbuf[0]=(aacx>>8)&0XFF;
-	tbuf[1]=aacx&0XFF;
-	tbuf[2]=(aacy>>8)&0XFF;
-	tbuf[3]=aacy&0XFF;
-	tbuf[4]=(aacz>>8)&0XFF;
-	tbuf[5]=aacz&0XFF; 
-	tbuf[6]=(gyrox>>8)&0XFF;
-	tbuf[7]=gyrox&0XFF;
-	tbuf[8]=(gyroy>>8)&0XFF;
-	tbuf[9]=gyroy&0XFF;
-	tbuf[10]=(gyroz>>8)&0XFF;
-	tbuf[11]=gyroz&0XFF;
-	usart1_niming_report(0XA1,tbuf,12);//自定义帧,0XA1
+	u8 tbuf[14]; 
+	
+	tbuf[0]=(temperature>>8) & 0xFF;
+	tbuf[1]=temperature & 0xFF;
+	tbuf[2]=(aacx>>8) & 0xFF;
+	tbuf[3]=aacx & 0xFF;
+	tbuf[4]=(aacy>>8) & 0xFF;
+	tbuf[5]=aacy & 0xFF;
+	tbuf[6]=(aacz>>8) & 0xFF;
+	tbuf[7]=aacz & 0xFF; 
+	tbuf[8]=(gyrox>>8) & 0xFF;
+	tbuf[9]=gyrox & 0xFF;
+	tbuf[10]=(gyroy>>8) & 0xFF;
+	tbuf[11]=gyroy & 0xFF;
+	tbuf[12]=(gyroz>>8) & 0xFF;
+	tbuf[13]=gyroz & 0xFF;
+
+	usart1_niming_report(0xA1,tbuf,14);//自定义帧,0XA1
 }	
 //通过串口1上报结算后的姿态数据给电脑
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
@@ -145,9 +149,9 @@ int main(void)
 			temp=MPU_Get_Temperature();	//得到温度值
 			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据
 			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
-			if(report)mpu6050_send_data(aacx,aacy,aacz,gyrox,gyroy,gyroz);//用自定义帧发送加速度和陀螺仪原始数据
+			if(report)mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz);//用自定义帧发送加速度和陀螺仪原始数据
 //			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*10));
-			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,12,45,67);
+//			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,12,45,67);
 //			if(report)mpu6050_send_data(1,2,3,4,5,6);//用自定义帧发送加速度和陀螺仪原始数据
 //			if(report)usart1_report_imu(1,2,3,4,5,6,7,8,9);
 			if((t%10)==0)
