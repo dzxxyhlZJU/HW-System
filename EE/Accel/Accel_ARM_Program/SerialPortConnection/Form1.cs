@@ -15,7 +15,7 @@ namespace SerialPortConnection
     public partial class Form1 : Form
     {
         SerialPort sp1 = new SerialPort();
-        //sp1.ReceivedBytesThreshold = 1;//只要有1个字符送达端口时便触发DataReceived事件 
+     //   sp1.ReceivedBytesThreshold = 1;//只要有1个字符送达端口时便触发DataReceived事件 
          
         public Form1()
         {
@@ -152,8 +152,8 @@ namespace SerialPortConnection
             sp1.BaudRate = 500000;
 
             Control.CheckForIllegalCrossThreadCalls = false;    //这个类中我们不检查跨线程的调用是否合法(因为.net 2.0以后加强了安全机制,，不允许在winform中直接跨线程访问控件的属性)
-            sp1.DataReceived += new SerialDataReceivedEventHandler(sp1_DataReceived);
-            //sp1.ReceivedBytesThreshold = 1;
+         //   sp1.DataReceived += new SerialDataReceivedEventHandler(sp1_DataReceived);
+         //   sp1.ReceivedBytesThreshold = 1;
 
             radio1.Checked = true;  //单选按钮默认是选中的
             rbRcvStr.Checked = true;
@@ -169,7 +169,8 @@ namespace SerialPortConnection
 
         void sp1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            if (sp1.IsOpen)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
+//            if (sp1.IsOpen)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
+            if (UartOpened)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
             {
                 //输出当前时间
                 DateTime dt = DateTime.Now;
@@ -315,7 +316,14 @@ namespace SerialPortConnection
                     cbSerial.Enabled = false;//关闭使能
                     cbBaudRate.Enabled = false;
                     UartOpened = true;
-                //    serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);//串口接收处理函数
+                    sp1.DataReceived += new SerialDataReceivedEventHandler(sp1_DataReceived);//串口接收处理函数
+
+                    //设置必要控件不可用
+                    cbSerial.Enabled = false;
+                    cbBaudRate.Enabled = false;
+                    cbDataBits.Enabled = false;
+                    cbStop.Enabled = false;
+                    cbParity.Enabled = false;
                 }
                 catch
                 {
