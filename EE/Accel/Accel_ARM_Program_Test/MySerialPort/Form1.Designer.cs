@@ -55,9 +55,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(356, 161);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -66,7 +66,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(152, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 4;
@@ -83,10 +83,9 @@
             "19200",
             "38400",
             "115200",
-            "500000"
-            });
+            "500000"});
             this.cmbBaud.Location = new System.Drawing.Point(60, 60);
-            this.cmbBaud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBaud.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBaud.Name = "cmbBaud";
             this.cmbBaud.Size = new System.Drawing.Size(77, 23);
             this.cmbBaud.TabIndex = 3;
@@ -96,7 +95,7 @@
             // 
             this.cmbPort.FormattingEnabled = true;
             this.cmbPort.Location = new System.Drawing.Point(60, 22);
-            this.cmbPort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPort.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPort.Name = "cmbPort";
             this.cmbPort.Size = new System.Drawing.Size(77, 23);
             this.cmbPort.TabIndex = 2;
@@ -124,34 +123,34 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ReceiveTbox);
-            this.groupBox2.Location = new System.Drawing.Point(40, 199);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(391, 18);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(485, 156);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(415, 350);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "接收数据";
             // 
             // ReceiveTbox
             // 
-            this.ReceiveTbox.Location = new System.Drawing.Point(60, 40);
-            this.ReceiveTbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReceiveTbox.Location = new System.Drawing.Point(12, 26);
+            this.ReceiveTbox.Margin = new System.Windows.Forms.Padding(4);
             this.ReceiveTbox.Multiline = true;
             this.ReceiveTbox.Name = "ReceiveTbox";
-            this.ReceiveTbox.ReadOnly = true;
-            this.ReceiveTbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.ReceiveTbox.Size = new System.Drawing.Size(333, 93);
+            this.ReceiveTbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.ReceiveTbox.Size = new System.Drawing.Size(381, 316);
             this.ReceiveTbox.TabIndex = 0;
+            this.ReceiveTbox.TabStop = false;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.SendTbox);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(40, 390);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(485, 159);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -160,7 +159,7 @@
             // SendTbox
             // 
             this.SendTbox.Location = new System.Drawing.Point(60, 25);
-            this.SendTbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SendTbox.Margin = new System.Windows.Forms.Padding(4);
             this.SendTbox.Multiline = true;
             this.SendTbox.Name = "SendTbox";
             this.SendTbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -170,7 +169,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(363, 90);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 5;
@@ -182,12 +181,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 575);
+            this.ClientSize = new System.Drawing.Size(821, 575);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AccelSmart";
             this.Text = "AccelSmart";
             this.Load += new System.EventHandler(this.Form1_Load);

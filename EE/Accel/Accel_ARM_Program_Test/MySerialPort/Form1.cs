@@ -38,7 +38,7 @@ namespace MySerialPort
 
             serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);
 
-            cmbBaud.Text = "115200";
+            cmbBaud.Text = "500000";
 
         }
         
@@ -49,6 +49,7 @@ namespace MySerialPort
             {
                 serialPort.PortName = cmbPort.Text;
                 serialPort.BaudRate = Convert.ToInt32(cmbBaud.Text, 10);
+                ReceiveTbox.Text = "";       //清空文本
                 try
                 {
                     serialPort.Open();     //打开串口
@@ -89,17 +90,9 @@ namespace MySerialPort
 
         private void post_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            //            if (sp1.IsOpen)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
             if (isOpened)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
             {
-                //输出当前时间
-                DateTime dt = DateTime.Now;
-                //    ReceiveTbox.Text += dt.GetDateTimeFormats('f')[0].ToString() + "\r\n";
-                ReceiveTbox.SelectAll();
-                //ReceiveTbox.SelectionColor = Color.Blue;         //改变字体的颜色
-
                 byte[] byteRead = new byte[serialPort.BytesToRead];    //BytesToRead:sp1接收的字符个数
-//                if (rdSendStr.Checked)                          //'发送字符串'单选按钮
                 if (false)                          //'发送字符串'单选按钮
                 {
                     //                   ReceiveTbox.Text += sp1.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
@@ -114,28 +107,17 @@ namespace MySerialPort
                         serialPort.Read(receivedData, 0, receivedData.Length);         //读取数据
                         //string text = sp1.Read();   //Encoding.ASCII.GetString(receivedData);
                         serialPort.DiscardInBuffer();                                  //清空SerialPort控件的Buffer
-                        //这是用以显示字符串
-                        //    string strRcv = null;
-                        //    for (int i = 0; i < receivedData.Length; i++ )
-                        //    {
-                        //        strRcv += ((char)Convert.ToInt32(receivedData[i])) ;
-                        //    }
-                        //    ReceiveTbox.Text += strRcv + "\r\n";             //显示信息
-                        //}
                         string strRcv = null;
                         //int decNum = 0;//存储十进制
                         for (int i = 0; i < receivedData.Length; i++) //窗体显示
                         {
-
                             strRcv += receivedData[i].ToString("X2");  //16进制显示
                         }
-                        //                       ReceiveTbox.Text += strRcv + "\r\n";
                         ReceiveTbox.Text += strRcv;
                     }
-                    catch (System.Exception ex)
+                    catch
                     {
-                        MessageBox.Show(ex.Message, "出错提示");
-                        SendTbox.Text = "";
+                        MessageBox.Show("串口关闭失败！");
                     }
                 }
             }
