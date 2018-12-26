@@ -26,14 +26,14 @@ namespace MySerialPort
             if (keyCom != null)
             {
                 string[] sSubKeys = keyCom.GetValueNames();
-                cmbPort.Items.Clear();
+                cbPort.Items.Clear();
                 foreach (string sName in sSubKeys)
                 {
                     string sValue = (string)keyCom.GetValue(sName);
-                    cmbPort.Items.Add(sValue);
+                    cbPort.Items.Add(sValue);
                 }
-                if (cmbPort.Items.Count > 0)
-                    cmbPort.SelectedIndex = 0;
+                if (cbPort.Items.Count > 0)
+                    cbPort.SelectedIndex = 0;
             }
 
             serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);
@@ -49,7 +49,7 @@ namespace MySerialPort
         {
             if (!isOpened)
             {
-                serialPort.PortName = cmbPort.Text;
+                serialPort.PortName = cbPort.Text;
                 serialPort.BaudRate = Convert.ToInt32(cbBaud.Text);
                 serialPort.DataBits = Convert.ToInt32(cbDataBits.Text);
                 switch (cbStop.Text)            //停止位
@@ -83,15 +83,17 @@ namespace MySerialPort
                         break;
                 }
 
-
                 ReceiveTbox.Text = "";       //清空文本
                 try
                 {
                     serialPort.Open();     //打开串口
                     isOpened = true;
                     OpenCOM.Text = "关闭串口";
-                    cmbPort.Enabled = false;//关闭使能
+                    cbPort.Enabled = false;//关闭使能
                     cbBaud.Enabled = false;
+                    cbDataBits.Enabled = false;
+                    cbStop.Enabled = false;
+                    cbParity.Enabled = false;
                 //    serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);//串口接收处理函数
                 }
                 catch
@@ -105,8 +107,11 @@ namespace MySerialPort
                 {
                     serialPort.Close();     //关闭串口
                     OpenCOM.Text = "打开串口";
-                    cmbPort.Enabled = true;//打开使能
+                    cbPort.Enabled = true;//打开使能
                     cbBaud.Enabled = true;
+                    cbDataBits.Enabled = true;
+                    cbStop.Enabled = true;
+                    cbParity.Enabled = true;
                     isOpened = false;
                 }
                 catch

@@ -39,7 +39,7 @@
             this.cbBaud = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbPort = new System.Windows.Forms.ComboBox();
+            this.cbPort = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,15 +66,15 @@
             this.groupBox1.Controls.Add(this.cbBaud);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cmbPort);
+            this.groupBox1.Controls.Add(this.cbPort);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Location = new System.Drawing.Point(3, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(356, 161);
+            this.groupBox1.Size = new System.Drawing.Size(296, 125);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "串口设置";
@@ -97,7 +97,7 @@
             "无",
             "奇校验",
             "偶校验"});
-            this.cbParity.Location = new System.Drawing.Point(210, 95);
+            this.cbParity.Location = new System.Drawing.Point(211, 93);
             this.cbParity.Margin = new System.Windows.Forms.Padding(4);
             this.cbParity.Name = "cbParity";
             this.cbParity.Size = new System.Drawing.Size(77, 23);
@@ -112,7 +112,7 @@
             "6",
             "7",
             "8"});
-            this.cbDataBits.Location = new System.Drawing.Point(211, 61);
+            this.cbDataBits.Location = new System.Drawing.Point(211, 57);
             this.cbDataBits.Margin = new System.Windows.Forms.Padding(4);
             this.cbDataBits.Name = "cbDataBits";
             this.cbDataBits.Size = new System.Drawing.Size(77, 23);
@@ -126,7 +126,7 @@
             "1",
             "1.5",
             "2"});
-            this.cbStop.Location = new System.Drawing.Point(59, 94);
+            this.cbStop.Location = new System.Drawing.Point(63, 93);
             this.cbStop.Margin = new System.Windows.Forms.Padding(4);
             this.cbStop.Name = "cbStop";
             this.cbStop.Size = new System.Drawing.Size(77, 23);
@@ -143,7 +143,7 @@
             "38400",
             "115200",
             "500000"});
-            this.cbBaud.Location = new System.Drawing.Point(60, 60);
+            this.cbBaud.Location = new System.Drawing.Point(63, 57);
             this.cbBaud.Margin = new System.Windows.Forms.Padding(4);
             this.cbBaud.Name = "cbBaud";
             this.cbBaud.Size = new System.Drawing.Size(77, 23);
@@ -153,7 +153,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(151, 99);
+            this.label5.Location = new System.Drawing.Point(152, 97);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
@@ -163,26 +163,26 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(152, 65);
+            this.label3.Location = new System.Drawing.Point(152, 61);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "数据位：";
             // 
-            // cmbPort
+            // cbPort
             // 
-            this.cmbPort.FormattingEnabled = true;
-            this.cmbPort.Location = new System.Drawing.Point(60, 22);
-            this.cmbPort.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbPort.Name = "cmbPort";
-            this.cmbPort.Size = new System.Drawing.Size(77, 23);
-            this.cmbPort.TabIndex = 2;
+            this.cbPort.FormattingEnabled = true;
+            this.cbPort.Location = new System.Drawing.Point(63, 21);
+            this.cbPort.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPort.Name = "cbPort";
+            this.cbPort.Size = new System.Drawing.Size(77, 23);
+            this.cbPort.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 98);
+            this.label4.Location = new System.Drawing.Point(4, 97);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 15);
@@ -192,7 +192,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 64);
+            this.label2.Location = new System.Drawing.Point(4, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
@@ -202,7 +202,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 25);
+            this.label1.Location = new System.Drawing.Point(11, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 15);
@@ -212,11 +212,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ReceiveTbox);
-            this.groupBox2.Location = new System.Drawing.Point(391, 18);
+            this.groupBox2.Location = new System.Drawing.Point(307, 10);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(415, 350);
+            this.groupBox2.Size = new System.Drawing.Size(415, 552);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "接收数据";
@@ -228,7 +228,7 @@
             this.ReceiveTbox.Multiline = true;
             this.ReceiveTbox.Name = "ReceiveTbox";
             this.ReceiveTbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ReceiveTbox.Size = new System.Drawing.Size(381, 316);
+            this.ReceiveTbox.Size = new System.Drawing.Size(381, 518);
             this.ReceiveTbox.TabIndex = 0;
             this.ReceiveTbox.TabStop = false;
             // 
@@ -236,28 +236,28 @@
             // 
             this.groupBox3.Controls.Add(this.SendTbox);
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Location = new System.Drawing.Point(40, 390);
+            this.groupBox3.Location = new System.Drawing.Point(3, 143);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(485, 159);
+            this.groupBox3.Size = new System.Drawing.Size(296, 96);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "发送数据";
             // 
             // SendTbox
             // 
-            this.SendTbox.Location = new System.Drawing.Point(60, 25);
+            this.SendTbox.Location = new System.Drawing.Point(8, 25);
             this.SendTbox.Margin = new System.Windows.Forms.Padding(4);
             this.SendTbox.Multiline = true;
             this.SendTbox.Name = "SendTbox";
             this.SendTbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.SendTbox.Size = new System.Drawing.Size(269, 93);
+            this.SendTbox.Size = new System.Drawing.Size(261, 28);
             this.SendTbox.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(363, 90);
+            this.button2.Location = new System.Drawing.Point(8, 61);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 29);
@@ -270,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 575);
+            this.ClientSize = new System.Drawing.Size(734, 575);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -295,7 +295,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button OpenCOM;
         private System.Windows.Forms.ComboBox cbBaud;
-        private System.Windows.Forms.ComboBox cmbPort;
+        private System.Windows.Forms.ComboBox cbPort;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
