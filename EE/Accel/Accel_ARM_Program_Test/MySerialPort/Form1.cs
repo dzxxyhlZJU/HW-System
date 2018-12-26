@@ -38,25 +38,60 @@ namespace MySerialPort
 
             serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);
 
-            cmbBaud.Text = "500000";
-
+            cbBaud.Text = "500000";
+            cbDataBits.Text = "8";
+            cbStop.Text = "1";
+            cbParity.Text = "无";
         }
         
         bool isOpened = false;//串口状态标志
-        private void button1_Click(object sender, EventArgs e)
+        private void OpenCOM_Click(object sender, EventArgs e)
         {
             if (!isOpened)
             {
                 serialPort.PortName = cmbPort.Text;
-                serialPort.BaudRate = Convert.ToInt32(cmbBaud.Text, 10);
+                serialPort.BaudRate = Convert.ToInt32(cbBaud.Text);
+                serialPort.DataBits = Convert.ToInt32(cbDataBits.Text);
+                switch (cbStop.Text)            //停止位
+                {
+                    case "1":
+                        serialPort.StopBits = StopBits.One;
+                        break;
+                    case "1.5":
+                        serialPort.StopBits = StopBits.OnePointFive;
+                        break;
+                    case "2":
+                        serialPort.StopBits = StopBits.Two;
+                        break;
+                    default:
+                        MessageBox.Show("Error：参数不正确!", "Error");
+                        break;
+                }
+                switch (cbParity.Text)             //校验位
+                {
+                    case "无":
+                        serialPort.Parity = Parity.None;
+                        break;
+                    case "奇校验":
+                        serialPort.Parity = Parity.Odd;
+                        break;
+                    case "偶校验":
+                        serialPort.Parity = Parity.Even;
+                        break;
+                    default:
+                        MessageBox.Show("Error：参数不正确!", "Error");
+                        break;
+                }
+
+
                 ReceiveTbox.Text = "";       //清空文本
                 try
                 {
                     serialPort.Open();     //打开串口
-                    button1.Text = "关闭串口";
-                    cmbPort.Enabled = false;//关闭使能
-                    cmbBaud.Enabled = false;
                     isOpened = true;
+                    OpenCOM.Text = "关闭串口";
+                    cmbPort.Enabled = false;//关闭使能
+                    cbBaud.Enabled = false;
                 //    serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);//串口接收处理函数
                 }
                 catch
@@ -69,9 +104,9 @@ namespace MySerialPort
                 try
                 {
                     serialPort.Close();     //关闭串口
-                    button1.Text = "打开串口";
+                    OpenCOM.Text = "打开串口";
                     cmbPort.Enabled = true;//打开使能
-                    cmbBaud.Enabled = true;
+                    cbBaud.Enabled = true;
                     isOpened = false;
                 }
                 catch
@@ -148,7 +183,7 @@ namespace MySerialPort
             }
         }
 
-        private void cmbBaud_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbBaud_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
