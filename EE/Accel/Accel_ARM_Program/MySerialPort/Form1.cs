@@ -9,11 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace MySerialPort
 {
     public partial class AccelSmart : Form
     {
+        FileStream fs = null;
+        FileStream saveDataFS = null;
+        String saveDataFile = null;
+
         public AccelSmart()
         {
             InitializeComponent();
@@ -49,6 +55,11 @@ namespace MySerialPort
         {
             if (!isOpened)
             {
+                DateTime now = DateTime.Now;
+                string newname = now.ToString("yyyyMMddHHmmss");
+                string FileName = "SDBStatus" + newname + ".bin";
+                fs = new FileStream(FileName, FileMode.Create);
+
                 serialPort.PortName = cbPort.Text;
                 serialPort.BaudRate = Convert.ToInt32(cbBaud.Text);
                 serialPort.DataBits = Convert.ToInt32(cbDataBits.Text);
@@ -117,6 +128,8 @@ namespace MySerialPort
                 {
                     MessageBox.Show("串口关闭失败！");
                 }
+             //   fs.Write(receivedData, 0, 1024);
+                fs.Close();
             }
             
         }
@@ -124,8 +137,9 @@ namespace MySerialPort
         private void post_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (isOpened)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
-            {
-                byte[] byteRead = new byte[serialPort.BytesToRead];    //BytesToRead:sp1接收的字符个数
+            {               
+                Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
+                //byte[] byteRead = new byte[serialPort.BytesToRead];    //BytesToRead:sp1接收的字符个数
                 if (false)                          //'发送字符串'单选按钮
                 {
                     //                   ReceiveTbox.Text += sp1.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
@@ -136,7 +150,7 @@ namespace MySerialPort
                 {
                     try
                     {
-                        Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
+                //        Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
                         serialPort.Read(receivedData, 0, receivedData.Length);         //读取数据
                         //string text = sp1.Read();   //Encoding.ASCII.GetString(receivedData);
                         serialPort.DiscardInBuffer();                                  //清空SerialPort控件的Buffer
@@ -160,6 +174,21 @@ namespace MySerialPort
             }
         }
 
+        private void SaveData_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Txt |*.txt";
+            saveFileDialog.Title = "保存接收到的数据到文件中";
+            saveFileDialog.ShowDialog();
+
+            if (saveFileDialog.FileName != null)
+            {
+                saveDataFile = saveFileDialog.FileName;
+            }
+            saveDataFS = new FileStream(saveDataFile, FileMode.Create);
+
+            saveDataFS.Write(ReceiveTbox.Text);
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {

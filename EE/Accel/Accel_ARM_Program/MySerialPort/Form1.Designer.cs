@@ -48,6 +48,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.SendTbox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.SaveData = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -211,6 +212,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SaveData);
             this.groupBox2.Controls.Add(this.ReceiveTbox);
             this.groupBox2.Location = new System.Drawing.Point(307, 10);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -228,7 +230,7 @@
             this.ReceiveTbox.Multiline = true;
             this.ReceiveTbox.Name = "ReceiveTbox";
             this.ReceiveTbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ReceiveTbox.Size = new System.Drawing.Size(381, 518);
+            this.ReceiveTbox.Size = new System.Drawing.Size(381, 466);
             this.ReceiveTbox.TabIndex = 0;
             this.ReceiveTbox.TabStop = false;
             this.ReceiveTbox.TextChanged += new System.EventHandler(this.ReceiveTbox_TextChanged);
@@ -266,6 +268,17 @@
             this.button2.Text = "发送";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // SaveData
+            // 
+            this.SaveData.Location = new System.Drawing.Point(54, 500);
+            this.SaveData.Margin = new System.Windows.Forms.Padding(4);
+            this.SaveData.Name = "SaveData";
+            this.SaveData.Size = new System.Drawing.Size(100, 29);
+            this.SaveData.TabIndex = 4;
+            this.SaveData.Text = "保存数据";
+            this.SaveData.UseVisualStyleBackColor = true;
+            this.SaveData.Click += new System.EventHandler(this.SaveData_Click);
             // 
             // AccelSmart
             // 
@@ -310,6 +323,7 @@
         private System.Windows.Forms.ComboBox cbStop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button SaveData;
     }
 }
 
