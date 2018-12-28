@@ -199,7 +199,7 @@ int main(void)
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,280,' ',16,0);		//去掉负号 
 				LCD_ShowNum(30+48+8,280,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,280,temp%10,1,16);		//显示小数部分 
+				LCD_ShowString(30+48+40,280,200,16,16,aacx);		//显示小数部分 
 				
 				temp = aacy;		//显示X Accel
 				if(temp<0)

@@ -139,7 +139,27 @@ u8 IIC_Read_Byte(unsigned char ack)
 	return receive;
 }
 
-
+////读取INT计数值
+//u8 Read_INT_Cnt(unsigned char ack)
+//{
+//	unsigned char i,receive=0;
+//	SDA_IN();//SDA设置为输入
+//	for(i=0;i<8;i++ )
+//	{
+//		IIC_SCL=0; 
+//		delay_us(2);
+//		IIC_SCL=1;
+//		receive<<=1;
+//		if(READ_SDA)
+//			receive++;   
+//		delay_us(1); 
+//	}					 
+//	if(!ack)
+//		IIC_NAck();//发送nACK
+//	else
+//		IIC_Ack(); //发送ACK   
+//	return receive;
+//}
 
 
 

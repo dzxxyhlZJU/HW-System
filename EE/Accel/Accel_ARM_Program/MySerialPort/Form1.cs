@@ -94,7 +94,6 @@ namespace MySerialPort
                     cbDataBits.Enabled = false;
                     cbStop.Enabled = false;
                     cbParity.Enabled = false;
-                //    serialPort.DataReceived += new SerialDataReceivedEventHandler(post_DataReceived);//串口接收处理函数
                 }
                 catch
                 {
@@ -121,12 +120,6 @@ namespace MySerialPort
             }
             
         }
-        //private void post_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        //{
-        //    string str = serialPort.ReadExisting();//字符串方式读
-        ////    ReceiveTbox.Text = "";//先清除上一次的数据
-        //    ReceiveTbox.Text += str;
-        //}
 
         private void post_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -136,7 +129,7 @@ namespace MySerialPort
                 if (false)                          //'发送字符串'单选按钮
                 {
                     //                   ReceiveTbox.Text += sp1.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
-                    ReceiveTbox.Text += serialPort.ReadLine(); //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
+                    ReceiveTbox.Text += serialPort.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
                     serialPort.DiscardInBuffer();                      //清空SerialPort控件的Buffer 
                 }
                 else                                            //'发送16进制按钮'
@@ -189,6 +182,11 @@ namespace MySerialPort
         }
 
         private void cbBaud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReceiveTbox_TextChanged(object sender, EventArgs e)
         {
 
         }

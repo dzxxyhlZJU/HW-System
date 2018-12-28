@@ -231,6 +231,7 @@
             this.ReceiveTbox.Size = new System.Drawing.Size(381, 518);
             this.ReceiveTbox.TabIndex = 0;
             this.ReceiveTbox.TabStop = false;
+            this.ReceiveTbox.TextChanged += new System.EventHandler(this.ReceiveTbox_TextChanged);
             // 
             // groupBox3
             // 
