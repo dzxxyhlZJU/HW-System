@@ -17,8 +17,6 @@ namespace MySerialPort
     public partial class AccelSmart : Form
     {
         FileStream fs = null;
-        FileStream saveDataFS = null;
-        String saveDataFile = null;
 
         public AccelSmart()
         {
@@ -132,23 +130,17 @@ namespace MySerialPort
             if (isOpened)     //此处可能没有必要判断是否打开串口，但为了严谨性，我还是加上了
             {               
                 Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
-                //byte[] byteRead = new byte[serialPort.BytesToRead];    //BytesToRead:sp1接收的字符个数
                 if (false)                          //'发送字符串'单选按钮
                 {
-                    //                   ReceiveTbox.Text += sp1.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
-                    ReceiveTbox.Text += serialPort.ReadLine() + "\r\n"; //注意：回车换行必须这样写，单独使用"\r"和"\n"都不会有效果
                     serialPort.DiscardInBuffer();                      //清空SerialPort控件的Buffer 
                 }
                 else                                            //'发送16进制按钮'
                 {
                     try
                     {
-                //        Byte[] receivedData = new Byte[serialPort.BytesToRead];        //创建接收字节数组
                         serialPort.Read(receivedData, 0, receivedData.Length);         //读取数据
-                        //string text = sp1.Read();   //Encoding.ASCII.GetString(receivedData);
                         serialPort.DiscardInBuffer();                                  //清空SerialPort控件的Buffer
                         string strRcv = null;
-                        //int decNum = 0;//存储十进制
                         for (int i = 0; i < receivedData.Length; i++) //窗体显示
                         {
                             strRcv += receivedData[i].ToString("X2");  //16进制显示
