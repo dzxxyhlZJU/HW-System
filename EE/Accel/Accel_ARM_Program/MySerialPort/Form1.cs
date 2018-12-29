@@ -54,12 +54,7 @@ namespace MySerialPort
         private void OpenCOM_Click(object sender, EventArgs e)
         {
             if (!isOpened)
-            {
-                DateTime now = DateTime.Now;
-                string newname = now.ToString("yyyyMMddHHmmss");
-                string FileName = "SDBStatus" + newname + ".bin";
-                fs = new FileStream(FileName, FileMode.Create);
-
+            {           
                 serialPort.PortName = cbPort.Text;
                 serialPort.BaudRate = Convert.ToInt32(cbBaud.Text);
                 serialPort.DataBits = Convert.ToInt32(cbDataBits.Text);
@@ -127,9 +122,7 @@ namespace MySerialPort
                 catch
                 {
                     MessageBox.Show("串口关闭失败！");
-                }
-             //   fs.Write(receivedData, 0, 1024);
-                fs.Close();
+                }             
             }
             
         }
@@ -176,18 +169,15 @@ namespace MySerialPort
 
         private void SaveData_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Txt |*.txt";
-            saveFileDialog.Title = "保存接收到的数据到文件中";
-            saveFileDialog.ShowDialog();
-
-            if (saveFileDialog.FileName != null)
+            DateTime now = DateTime.Now;
+            string newname = now.ToString("yyyyMMddHHmmss");
+            string FileName = "AccelData_" + newname + ".txt";
+            fs = new FileStream(FileName, FileMode.Create);
+            fs.Close();
+            using (StreamWriter writer = new StreamWriter(FileName))
             {
-                saveDataFile = saveFileDialog.FileName;
+                writer.Write(this.ReceiveTbox.Text);
             }
-            saveDataFS = new FileStream(saveDataFile, FileMode.Create);
-
-            saveDataFS.Write(ReceiveTbox.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
