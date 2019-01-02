@@ -164,8 +164,8 @@ int main(void)
 					LCD_ShowChar(30+48,200,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,200,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,200,temp/100,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,200,temp/10%10,1,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,200,temp/100,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,200,temp/10%10,1,16,1);		//显示小数部分 
 				
 				temp=pitch*10;		//显示俯仰角				
 				if(temp<0)
@@ -173,8 +173,8 @@ int main(void)
 					LCD_ShowChar(30+48,220,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,220,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,220,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,220,temp%10,1,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,220,temp/10,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,220,temp%10,1,16,1);		//显示小数部分 
 				
 				temp=roll*10;			//显示横滚角
 				if(temp<0)
@@ -182,8 +182,8 @@ int main(void)
 					LCD_ShowChar(30+48,240,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,240,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,240,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,240,temp%10,1,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,240,temp/10,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,240,temp%10,1,16,1);		//显示小数部分 
 				
 				temp=yaw*10;		//显示航向角
 				if(temp<0)
@@ -191,8 +191,8 @@ int main(void)
 					LCD_ShowChar(30+48,260,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,260,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,260,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,260,temp%10,1,16);		//显示小数部分  
+				LCD_ShowNum(30+48+8,260,temp/10,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,260,temp%10,1,16,1);		//显示小数部分  
 				
 				temp = aacx*100/16384;		//显示X Accel
 				if(temp<0)
@@ -200,8 +200,8 @@ int main(void)
 					LCD_ShowChar(30+48,280,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,280,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,280,temp/100,2,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,280,temp%100,2,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,280,temp/100,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,280,temp%100,2,16,1);		//显示小数部分 
 				
 				temp = aacy*100/16384;		//显示X Accel
 				if(temp<0)
@@ -209,8 +209,8 @@ int main(void)
 					LCD_ShowChar(30+48,300,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,300,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,300,temp/100,2,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,300,temp%100,2,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,300,temp/100,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,300,temp%100,2,16,1);		//显示小数部分 
 				
 				temp = aacz*100/16384;		//显示X Accel
 				if(temp<0)
@@ -218,8 +218,8 @@ int main(void)
 					LCD_ShowChar(30+48,320,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,320,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,320,temp/100,2,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,320,temp%100,2,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,320,temp/100,3,16,0);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,320,temp%100,2,16,1);		//显示小数部分 
 				
 				t=0;
 				LED0=!LED0;//LED闪烁

@@ -2888,10 +2888,10 @@ u32 LCD_Pow(u8 m,u8 n)
 //size:字体大小
 //color:颜色 
 //num:数值(0~4294967295);	 
-void LCD_ShowNum(u16 x,u16 y,u32 num,u8 len,u8 size)
+void LCD_ShowNum(u16 x,u16 y,u32 num,u8 len,u8 size,u8 enshow)
 {         	
 	u8 t,temp;
-	u8 enshow=0;						   
+//	u8 enshow=0;						   
 	for(t=0;t<len;t++)
 	{
 		temp=(num/LCD_Pow(10,len-t-1))%10;
@@ -2901,9 +2901,10 @@ void LCD_ShowNum(u16 x,u16 y,u32 num,u8 len,u8 size)
 			{
 				LCD_ShowChar(x+(size/2)*t,y,' ',size,0);
 				continue;
-			}else enshow=1; 
-		 	 
+			}					 	 
 		}
+		else 
+				LCD_ShowChar(x+(size/2)*t,y,'0',size,0);
 	 	LCD_ShowChar(x+(size/2)*t,y,temp+'0',size,0); 
 	}
 } 
