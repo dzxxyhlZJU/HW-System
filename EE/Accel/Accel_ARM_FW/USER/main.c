@@ -47,7 +47,7 @@ void usart1_niming_report(u8 fun,u8*data,u8 len)
 //发送加速度传感器数据和陀螺仪数据
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
 //gyrox,gyroy,gyroz:x,y,z三个方向上面的陀螺仪值
-void mpu6050_send_data(short temperature,short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz)
+void mpu6050_send_data(short temperature,short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz,short roll,short pitch,short yaw)
 {
 	u8 tbuf[14]; 
 	
@@ -135,6 +135,9 @@ int main(void)
  	LCD_ShowString(30,220,200,16,16,"Pitch:    . C");	
  	LCD_ShowString(30,240,200,16,16," Roll:    . C");	 
  	LCD_ShowString(30,260,200,16,16," Yaw :    . C");	 
+	LCD_ShowString(30,280,200,16,16," Aacx:    .  g");	
+ 	LCD_ShowString(30,300,200,16,16," Aacy:    .  g");	 
+ 	LCD_ShowString(30,320,200,16,16," Aacz:    .  g");	
  	while(1)
 	{
 		key=KEY_Scan(0);
@@ -150,10 +153,9 @@ int main(void)
 			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据
 			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
 			if(report)
-				mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz);//用自定义帧发送加速度和陀螺仪原始数据
+				mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*10));//用自定义帧发送加速度和陀螺仪原始数据
 //			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*10));
 //			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,12,45,67);
-//			if(report)mpu6050_send_data(1,2,3,4,5,6);//用自定义帧发送加速度和陀螺仪原始数据
 //			if(report)usart1_report_imu(1,2,3,4,5,6,7,8,9);
 			if((t%10)==0)
 			{ 
@@ -163,7 +165,7 @@ int main(void)
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,200,' ',16,0);		//去掉负号 
 				LCD_ShowNum(30+48+8,200,temp/100,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,200,temp%10,1,16);		//显示小数部分 
+				LCD_ShowNum(30+48+40,200,temp/10%10,1,16);		//显示小数部分 
 				
 				temp=pitch*10;		//显示俯仰角				
 				if(temp<0)
@@ -192,32 +194,32 @@ int main(void)
 				LCD_ShowNum(30+48+8,260,temp/10,3,16);		//显示整数部分	    
 				LCD_ShowNum(30+48+40,260,temp%10,1,16);		//显示小数部分  
 				
-				temp = aacx;		//显示X Accel
+				temp = aacx*100/16384;		//显示X Accel
 				if(temp<0)
 				{
 					LCD_ShowChar(30+48,280,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,280,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,280,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowString(30+48+40,280,200,16,16,aacx);		//显示小数部分 
+				LCD_ShowNum(30+48+8,280,temp/100,2,16);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,280,temp%100,2,16);		//显示小数部分 
 				
-				temp = aacy;		//显示X Accel
+				temp = aacy*100/16384;		//显示X Accel
 				if(temp<0)
 				{
 					LCD_ShowChar(30+48,300,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,300,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,300,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,300,temp%10,1,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,300,temp/100,2,16);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,300,temp%100,2,16);		//显示小数部分 
 				
-				temp = aacz;		//显示X Accel
+				temp = aacz*100/16384;		//显示X Accel
 				if(temp<0)
 				{
 					LCD_ShowChar(30+48,320,'-',16,0);		//显示负号
 					temp=-temp;		//转为正数
 				}else LCD_ShowChar(30+48,320,' ',16,0);		//去掉负号 
-				LCD_ShowNum(30+48+8,320,temp/10,3,16);		//显示整数部分	    
-				LCD_ShowNum(30+48+40,320,temp%10,1,16);		//显示小数部分 
+				LCD_ShowNum(30+48+8,320,temp/100,2,16);		//显示整数部分	    
+				LCD_ShowNum(30+48+40,320,temp%100,2,16);		//显示小数部分 
 				
 				t=0;
 				LED0=!LED0;//LED闪烁
