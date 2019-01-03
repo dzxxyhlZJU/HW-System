@@ -49,7 +49,7 @@ void usart1_niming_report(u8 fun,u8*data,u8 len)
 //gyrox,gyroy,gyroz:x,y,z三个方向上面的陀螺仪值
 void mpu6050_send_data(short temperature,short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz,short roll,short pitch,short yaw)
 {
-	u8 tbuf[14]; 
+	u8 tbuf[20]; 
 	
 	tbuf[0]=(temperature>>8) & 0xFF;
 	tbuf[1]=temperature & 0xFF;
@@ -65,8 +65,14 @@ void mpu6050_send_data(short temperature,short aacx,short aacy,short aacz,short 
 	tbuf[11]=gyroy & 0xFF;
 	tbuf[12]=(gyroz>>8) & 0xFF;
 	tbuf[13]=gyroz & 0xFF;
-
-	usart1_niming_report(0xA1,tbuf,14);//自定义帧,0XA1
+	tbuf[14]=(roll>>8) & 0xFF;
+	tbuf[15]=roll & 0xFF;
+	tbuf[16]=(pitch>>8) & 0xFF;
+	tbuf[17]=pitch & 0xFF;	
+	tbuf[18]=(yaw>>8) & 0xFF;
+	tbuf[19]=yaw & 0xFF;
+	
+	usart1_niming_report(0xA1,tbuf,20);//自定义帧,0XA1
 }	
 //通过串口1上报结算后的姿态数据给电脑
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
@@ -153,7 +159,7 @@ int main(void)
 			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据
 			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
 			if(report)
-				mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*10));//用自定义帧发送加速度和陀螺仪原始数据
+				mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*100));//用自定义帧发送加速度和陀螺仪原始数据
 //			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*10));
 //			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,12,45,67);
 //			if(report)usart1_report_imu(1,2,3,4,5,6,7,8,9);
