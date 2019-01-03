@@ -160,10 +160,7 @@ int main(void)
 			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
 			if(report)
 				mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*100));//用自定义帧发送加速度和陀螺仪原始数据
-//			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*10));
-//			if(report)usart1_report_imu(aacx,aacy,aacz,gyrox,gyroy,gyroz,12,45,67);
-//			if(report)usart1_report_imu(1,2,3,4,5,6,7,8,9);
-			if((t%10)==0)
+			if((t%2)==0)
 			{ 
 				if(temp<0)			//显示温度					
 				{

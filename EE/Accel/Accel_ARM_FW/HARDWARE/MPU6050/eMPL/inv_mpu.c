@@ -541,6 +541,16 @@ const struct hw_s hw={
   256	 //bank_size
 };
 
+////modify
+//const struct hw_s hw={
+//  0x69,	 //addr
+//  1024,	 //max_fifo
+//  118,	 //num_reg
+//  340,	 //temp_sens
+//  -521,	 //temp_offset
+//  256	 //bank_size
+//};
+
 //const struct test_s test = {
 //    .gyro_sens      = 32768/250,
 //    .accel_sens     = 32768/16,
@@ -635,6 +645,7 @@ const struct gyro_reg_s reg = {
 };
 const struct hw_s hw = {
     .addr           = 0x68,
+//	  .addr           = 0x69,			//modify
     .max_fifo       = 1024,
     .num_reg        = 128,
     .temp_sens      = 321,

@@ -23,6 +23,15 @@
 #define READ_SDA   PBin(9)  //输入SDA 
 #define MPU_INT PCin(0)			//INT 输入
 
+////IO方向设置
+//#define SDA_IN()  {GPIOC->MODER&=~(3<<(10*2));GPIOC->MODER|=0<<10*2;}	//PB10输入模式
+//#define SDA_OUT() {GPIOC->MODER&=~(3<<(10*2));GPIOC->MODER|=1<<10*2;} //PB10输出模式
+////IO操作函数	 
+//#define IIC_SCL    PCout(10) //SCL
+//#define IIC_SDA    PCout(11) //SDA	 
+//#define READ_SDA   PCin(11)  //输入SDA 
+//#define MPU_INT PCin(0)			//INT 输入
+
 //IIC所有操作函数
 void IIC_Init(void);                //初始化IIC的IO口				 
 void IIC_Start(void);				//发送IIC开始信号
