@@ -48,32 +48,34 @@ void usart1_niming_report(u8 fun,u8*data,u8 len)
 //发送加速度传感器数据和陀螺仪数据
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
 //gyrox,gyroy,gyroz:x,y,z三个方向上面的陀螺仪值
-void mpu6050_send_data(short temperature,short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz,short roll,short pitch,short yaw)
+void mpu6050_send_data(short DataIndex,short temperature,short aacx,short aacy,short aacz,short gyrox,short gyroy,short gyroz,short roll,short pitch,short yaw)
 {
-	u8 tbuf[20]; 
+	u8 tbuf[22]; 
 	
-	tbuf[0]=(temperature>>8) & 0xFF;
-	tbuf[1]=temperature & 0xFF;
-	tbuf[2]=(aacx>>8) & 0xFF;
-	tbuf[3]=aacx & 0xFF;
-	tbuf[4]=(aacy>>8) & 0xFF;
-	tbuf[5]=aacy & 0xFF;
-	tbuf[6]=(aacz>>8) & 0xFF;
-	tbuf[7]=aacz & 0xFF; 
-	tbuf[8]=(gyrox>>8) & 0xFF;
-	tbuf[9]=gyrox & 0xFF;
-	tbuf[10]=(gyroy>>8) & 0xFF;
-	tbuf[11]=gyroy & 0xFF;
-	tbuf[12]=(gyroz>>8) & 0xFF;
-	tbuf[13]=gyroz & 0xFF;
-	tbuf[14]=(roll>>8) & 0xFF;
-	tbuf[15]=roll & 0xFF;
-	tbuf[16]=(pitch>>8) & 0xFF;
-	tbuf[17]=pitch & 0xFF;	
-	tbuf[18]=(yaw>>8) & 0xFF;
-	tbuf[19]=yaw & 0xFF;
+	tbuf[0]=(DataIndex>>8) & 0xFF;
+	tbuf[1]=DataIndex & 0xFF;
+	tbuf[2]=(temperature>>8) & 0xFF;
+	tbuf[3]=temperature & 0xFF;
+	tbuf[4]=(aacx>>8) & 0xFF;
+	tbuf[5]=aacx & 0xFF;
+	tbuf[6]=(aacy>>8) & 0xFF;
+	tbuf[7]=aacy & 0xFF;
+	tbuf[8]=(aacz>>8) & 0xFF;
+	tbuf[9]=aacz & 0xFF; 
+	tbuf[10]=(gyrox>>8) & 0xFF;
+	tbuf[11]=gyrox & 0xFF;
+	tbuf[12]=(gyroy>>8) & 0xFF;
+	tbuf[13]=gyroy & 0xFF;
+	tbuf[14]=(gyroz>>8) & 0xFF;
+	tbuf[15]=gyroz & 0xFF;
+	tbuf[16]=(roll>>8) & 0xFF;
+	tbuf[17]=roll & 0xFF;
+	tbuf[18]=(pitch>>8) & 0xFF;
+	tbuf[19]=pitch & 0xFF;	
+	tbuf[20]=(yaw>>8) & 0xFF;
+	tbuf[21]=yaw & 0xFF;
 	
-	usart1_niming_report(0xA1,tbuf,20);//自定义帧,0XA1
+	usart1_niming_report(0xA1,tbuf,22);//自定义帧,0XA1
 }	
 //通过串口1上报结算后的姿态数据给电脑
 //aacx,aacy,aacz:x,y,z三个方向上面的加速度值
@@ -105,8 +107,20 @@ void usart1_report_imu(short aacx,short aacy,short aacz,short gyrox,short gyroy,
 	tbuf[16]=(yaw>>8)&0XFF;
 	tbuf[17]=yaw&0XFF;
 	usart1_niming_report(0XAF,tbuf,28);//飞控显示帧,0XAF
-} 
-  
+}
+
+short DataIndex;  
+//外部中断0服务程序
+void EXTI0_IRQHandler(void)
+{
+	delay_ms(0.1);	//消抖
+
+	LED1=!LED1; //蜂鸣器翻转 
+	DataIndex = DataIndex+1;
+
+	EXTI_ClearITPendingBit(EXTI_Line0); //清除LINE0上的中断标志位 
+}
+
 int main(void)
 { 
 	u8 t=0,report=1;			//默认开启上报
@@ -128,13 +142,13 @@ int main(void)
 	LCD_ShowString(30,70,200,16,16,"MPU6050 TEST");	
 	LCD_ShowString(30,90,200,16,16,"Tiger Smart Bra");
 	LCD_ShowString(30,110,200,16,16,"2018/12/18");
-//	while(mpu_dmp_init())
-//	{
-//		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
-//		delay_ms(200);
-//		LCD_Fill(30,130,239,130+16,WHITE);
-// 		delay_ms(200);
-//	}
+	while(mpu_dmp_init())
+	{
+		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
+		delay_ms(200);
+		LCD_Fill(30,130,239,130+16,WHITE);
+ 		delay_ms(200);
+	}
 	LCD_ShowString(30,130,200,16,16,"MPU6050 OK");
 	LCD_ShowString(30,150,200,16,16,"KEY0:UPLOAD ON/OFF");
 	POINT_COLOR=BLUE;//设置字体为蓝色 
@@ -155,14 +169,14 @@ int main(void)
 			if(report)LCD_ShowString(30,170,200,16,16,"UPLOAD ON ");
 			else LCD_ShowString(30,170,200,16,16,"UPLOAD OFF");
 		}
-//		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
-//		{ 
+		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
+		{ 
 			temp=MPU_Get_Temperature();	//得到温度值
 			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据
 			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
 			if(report)
-				mpu6050_send_data(temp,aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*100));//用自定义帧发送加速度和陀螺仪原始数据
-			if((t%2)==0)
+				mpu6050_send_data(DataIndex,temp,aacx,aacy,aacz,gyrox,gyroy,gyroz,(int)(roll*100),(int)(pitch*100),(int)(yaw*100));//用自定义帧发送加速度和陀螺仪原始数据
+			if((t%10)==0)
 			{ 
 				if(temp<0)			//显示温度					
 				{
@@ -229,7 +243,7 @@ int main(void)
 				t=0;
 //				LED0=!LED0;//LED闪烁
 			}
-//		}
+		}
 		t++; 
 	} 	
 }

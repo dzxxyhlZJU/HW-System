@@ -54,7 +54,6 @@ void IIC_Init(void)
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN ;//下拉
   GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化GPIOA0
 	
-	
 }
 
 //产生IIC起始信号

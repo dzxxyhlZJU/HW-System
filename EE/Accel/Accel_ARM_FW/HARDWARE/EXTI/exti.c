@@ -19,15 +19,15 @@
 //All rights reserved									  
 ////////////////////////////////////////////////////////////////////////////////// 
 
-//外部中断0服务程序
-void EXTI0_IRQHandler(void)
-{
-	delay_ms(0.5);	//消抖
+////外部中断0服务程序
+//void EXTI0_IRQHandler(void)
+//{
+//	delay_ms(0.5);	//消抖
 
-	LED1=!LED1; //蜂鸣器翻转 
+//	LED1=!LED1; //蜂鸣器翻转 
 
-	EXTI_ClearITPendingBit(EXTI_Line0); //清除LINE0上的中断标志位 
-}
+//	EXTI_ClearITPendingBit(EXTI_Line0); //清除LINE0上的中断标志位 
+//}
 	   
 //外部中断初始化程序
 //初始化PE2~4,PA0为中断输入.
