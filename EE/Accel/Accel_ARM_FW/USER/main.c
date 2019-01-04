@@ -126,13 +126,13 @@ int main(void)
 	LCD_ShowString(30,70,200,16,16,"MPU6050 TEST");	
 	LCD_ShowString(30,90,200,16,16,"Tiger Smart Bra");
 	LCD_ShowString(30,110,200,16,16,"2018/12/18");
-	while(mpu_dmp_init())
-	{
-		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
-		delay_ms(200);
-		LCD_Fill(30,130,239,130+16,WHITE);
- 		delay_ms(200);
-	}
+//	while(mpu_dmp_init())
+//	{
+//		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
+//		delay_ms(200);
+//		LCD_Fill(30,130,239,130+16,WHITE);
+// 		delay_ms(200);
+//	}
 	LCD_ShowString(30,130,200,16,16,"MPU6050 OK");
 	LCD_ShowString(30,150,200,16,16,"KEY0:UPLOAD ON/OFF");
 	POINT_COLOR=BLUE;//设置字体为蓝色 
@@ -153,8 +153,8 @@ int main(void)
 			if(report)LCD_ShowString(30,170,200,16,16,"UPLOAD ON ");
 			else LCD_ShowString(30,170,200,16,16,"UPLOAD OFF");
 		}
-		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
-		{ 
+//		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
+//		{ 
 			temp=MPU_Get_Temperature();	//得到温度值
 			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据
 			MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);	//得到陀螺仪数据
@@ -227,7 +227,7 @@ int main(void)
 				t=0;
 				LED0=!LED0;//LED闪烁
 			}
-		}
+//		}
 		t++; 
 	} 	
 }
