@@ -49,6 +49,8 @@ void IIC_Init(void)
 	IIC_SDA=1;
 	
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;//WK_UP对应引脚PA0
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;//普通输入模式
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100M
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN ;//下拉
   GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化GPIOA0
 	

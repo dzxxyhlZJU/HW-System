@@ -227,7 +227,7 @@ int main(void)
 				LCD_ShowNum(30+48+40,320,temp%100,2,16,1);		//显示小数部分 
 				
 				t=0;
-				LED0=!LED0;//LED闪烁
+//				LED0=!LED0;//LED闪烁
 			}
 //		}
 		t++; 
