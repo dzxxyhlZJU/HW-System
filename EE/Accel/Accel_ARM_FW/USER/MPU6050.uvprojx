@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\KEY;..\SYSTEM\sys;..\SYSTEM\delay;..\HARDWARE\IIC;..\SYSTEM\usart;..\HARDWARE\MPU6050;..\HARDWARE\LED;..\HARDWARE\LCD;..\HARDWARE\MPU6050\eMPL</IncludePath>
+              <IncludePath>..\CORE;..\USER;..\FWLIB\inc;..\HARDWARE\KEY;..\SYSTEM\sys;..\SYSTEM\delay;..\HARDWARE\IIC;..\SYSTEM\usart;..\HARDWARE\MPU6050;..\HARDWARE\LED;..\HARDWARE\LCD;..\HARDWARE\MPU6050\eMPL;..\HARDWARE\EXTI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -435,6 +435,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\MPU6050\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
+            <File>
+              <FileName>exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\EXTI\exti.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -504,6 +509,11 @@
               <FileName>stm32f4xx_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FWLIB\src\stm32f4xx_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FWLIB\src\stm32f4xx_exti.c</FilePath>
             </File>
           </Files>
         </Group>

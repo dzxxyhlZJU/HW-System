@@ -36,7 +36,7 @@ void IIC_Init(void)
 {			
   GPIO_InitTypeDef  GPIO_InitStructure;
 
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);//使能GPIOB时钟
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC, ENABLE);//使能GPIOB时钟
 
   //GPIOC10,C11初始化设置
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
@@ -47,6 +47,12 @@ void IIC_Init(void)
   GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
 	IIC_SCL=1;
 	IIC_SDA=1;
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;//WK_UP对应引脚PA0
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN ;//下拉
+  GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化GPIOA0
+	
+	
 }
 
 //产生IIC起始信号

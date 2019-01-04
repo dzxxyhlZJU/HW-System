@@ -5,6 +5,7 @@
 #include "key.h"
 #include "lcd.h"
 #include "mpu6050.h"
+#include "exti.h"
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h" 
 
@@ -121,6 +122,7 @@ int main(void)
 	KEY_Init();					//初始化按键
  	LCD_Init();					//LCD初始化
 	MPU_Init();					//初始化MPU6050
+	EXTIX_Init();       //初始化外部中断输入 
  	POINT_COLOR=RED;//设置字体为红色 
 	LCD_ShowString(30,50,200,16,16,"Explorer STM32F4");	
 	LCD_ShowString(30,70,200,16,16,"MPU6050 TEST");	
