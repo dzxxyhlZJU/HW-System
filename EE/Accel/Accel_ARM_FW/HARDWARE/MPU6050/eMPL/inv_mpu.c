@@ -532,6 +532,7 @@ const struct gyro_reg_s reg = {
 //    ,.compass_fsr    = AK89xx_FSR
 //#endif
 //};
+
 const struct hw_s hw={
   0x68,	 //addr
   1024,	 //max_fifo

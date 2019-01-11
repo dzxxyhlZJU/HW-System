@@ -123,32 +123,32 @@ void EXTI0_IRQHandler(void)
 
 int main(void)
 { 
-	u8 t=0,report=1;			//默认开启上报
+	u8 t=0,report=1;					//默认开启上报
 	u8 key;
 	float pitch,roll,yaw; 		//欧拉角
-	short aacx,aacy,aacz;		//加速度传感器原始数据
+	short aacx,aacy,aacz;			//加速度传感器原始数据
 	short gyrox,gyroy,gyroz;	//陀螺仪原始数据
-	short temp;					//温度
+	short temp;								//温度
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置系统中断优先级分组2
-	delay_init(168);  //初始化延时函数
-	uart_init(500000);		//初始化串口波特率为500000
-	LED_Init();					//初始化LED 
-	KEY_Init();					//初始化按键
- 	LCD_Init();					//LCD初始化
-	MPU_Init();					//初始化MPU6050
-	EXTIX_Init();       //初始化外部中断输入 
- 	POINT_COLOR=RED;//设置字体为红色 
+	delay_init(168);  				//初始化延时函数
+	uart_init(500000);				//初始化串口波特率为500000
+	LED_Init();								//初始化LED 
+	KEY_Init();								//初始化按键
+ 	LCD_Init();								//LCD初始化
+	MPU_Init();								//初始化MPU6050
+	EXTIX_Init();       			//初始化外部中断输入 
+ 	POINT_COLOR=RED;					//设置字体为红色 
 	LCD_ShowString(30,50,200,16,16,"Explorer STM32F4");	
 	LCD_ShowString(30,70,200,16,16,"MPU6050 TEST");	
 	LCD_ShowString(30,90,200,16,16,"Tiger Smart Bra");
 	LCD_ShowString(30,110,200,16,16,"2018/12/18");
-	while(mpu_dmp_init())
-	{
-		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
-		delay_ms(200);
-		LCD_Fill(30,130,239,130+16,WHITE);
- 		delay_ms(200);
-	}
+//	while(mpu_dmp_init())						//100Hz output rate;
+//	{
+//		LCD_ShowString(30,130,200,16,16,"MPU6050 Error");
+//		delay_ms(200);
+//		LCD_Fill(30,130,239,130+16,WHITE);
+// 		delay_ms(200);
+//	}
 	LCD_ShowString(30,130,200,16,16,"MPU6050 OK");
 	LCD_ShowString(30,150,200,16,16,"KEY0:UPLOAD ON/OFF");
 	POINT_COLOR=BLUE;//设置字体为蓝色 
@@ -169,7 +169,7 @@ int main(void)
 			if(report)LCD_ShowString(30,170,200,16,16,"UPLOAD ON ");
 			else LCD_ShowString(30,170,200,16,16,"UPLOAD OFF");
 		}
-		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
+//		if(mpu_dmp_get_data(&pitch,&roll,&yaw)==0)
 		{ 
 			temp=MPU_Get_Temperature();	//得到温度值
 			MPU_Get_Accelerometer(&aacx,&aacy,&aacz);	//得到加速度传感器数据

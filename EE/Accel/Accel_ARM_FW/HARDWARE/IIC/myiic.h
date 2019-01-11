@@ -24,12 +24,12 @@
 #define MPU_INT PCin(0)			//INT 输入
 
 ////IO方向设置
-//#define SDA_IN()  {GPIOD->MODER&=~(3<<(7*2));GPIOD->MODER|=0<<7*2;}	//PB10输入模式
-//#define SDA_OUT() {GPIOD->MODER&=~(3<<(7*2));GPIOD->MODER|=1<<7*2;} //PB10输出模式
+//#define SDA_IN()  {GPIOC->MODER&=~(3<<(9*2));GPIOC->MODER|=0<<9*2;}	//PB10输入模式
+//#define SDA_OUT() {GPIOC->MODER&=~(3<<(9*2));GPIOC->MODER|=1<<9*2;} //PB10输出模式
 ////IO操作函数	 
-//#define IIC_SCL    PDout(6) //SCL
-//#define IIC_SDA    PDout(7) //SDA	 
-//#define READ_SDA   PDin(7)  //输入SDA 
+//#define IIC_SCL    PCout(8) //SCL
+//#define IIC_SDA    PCout(9) //SDA	 
+//#define READ_SDA   PCin(9)  //输入SDA 
 //#define MPU_INT PCin(0)			//INT 输入
 
 //IIC所有操作函数
